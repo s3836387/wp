@@ -1,0 +1,43 @@
+p+p{
+    color: purple;
+}
+p+p+p{
+    color: saddlebrown;
+}
+a:link  {
+    color: darkred;
+  }
+a:visited{color: salmon}
+  a:hover, a:active {
+    color: green;
+  }
+ol li:first-child{
+    color: red;
+}
+ol li:nth-child(2n){
+    color:green;
+}
+ol li:last-child{
+    color: royalblue;
+}
+table{
+    border-collapse: collapse;
+}
+table,th,td{
+    border: 1px solid;
+}
+table tr:first-child{
+    background-color: cyan;
+}
+table tr:nth-child(2n){
+background-color: darkolivegreen;
+}
+p::selection { 
+    color: rgba(0,0,0,0);
+  }
+p::before,p::after{
+content: " \" "; 
+color: darkcyan;
+font-weight: bold;
+font-size: 100%;
+}
