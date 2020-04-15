@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="tools.js"></script>
+    <script>
+        function clickHandler1(){
+            document.getElementById('date').value= Date();
+        }
+    </script>
+</head>
+<body>
+    <h1 onclick="clickHandler()" id="h">What's the date</h1>
+
+    <input id="date" type="text" value="Click the button" >
+
+    <input onclick="clickHandler1()" type="button" value="Display date">
+
+    <p id="Copyright">
+        &copy; Copyright Date Awareness Inc. 1990-
+        
+    </p>
+    <script>
+        var currentDate= new Date();
+        document.getElementById('Copyright').innerHTML+= currentDate.getFullYear();
+    </script>
+    <h6>Ask us about the benefits of online dating</h6>
+</body>
+</html>
