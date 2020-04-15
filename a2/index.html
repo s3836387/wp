@@ -15,7 +15,7 @@
   <!-- Keep wireframe.css for debugging, add your css to style.css -->
   <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>
   <link id='stylecss' type="text/css" rel="stylesheet" href="../style.css">
-
+  <link rel="stylesheet" href="mystyle.css">
   <script src='../wireframe.js'></script>
 </head>
 
@@ -25,37 +25,92 @@
     <div>Cinemax</div>
   </header>
 
-  <nav>
-    <div>Put website navigation links here</div>
-  </nav>
+  <div id="nav" class="container">
+    <ol class="nav justify-content-center">
+
+      <!--Links-->
+      <li class="nav-item">
+        <a class="nav-link" href="#aboutUs">About Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#nowShowing">Now Showing</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#prices">Prices</a>
+      </li>
+    </ol>
+  </div>
 
   <main>
     <article id='Website Under Construction'>
       <!-- Creative Commons image sourced from https://pixabay.com/en/maintenance-under-construction-2422173/ and used for educational purposes only -->
       <img src='../../media/website-under-construction.png' alt='Website Under Construction' />
-      
-      <!--About us section-->
-      <div id="aboutUs">
-
-      </div>
-      
-      <!--Now Showing-->
-      <div id="nowShowing">
-
-      </div>
-
-      <!--Prices-->
-      <div id="prices">
-
-      </div>
     </article>
+
+    <!--About us section-->
+    <div id="aboutUs" class="container">
+
+    </div>
+
+    <!--Now Showing-->
+    <div id="nowShowing" class="container">
+
+    </div>
+
+    <!--Prices-->
+    <div id="prices" class="container">
+      <table id="tprice" class="table table-border table-striped table-hover">
+        <tr>
+          <th>Seat Type</th>
+          <th>Seat Code</th>
+          <th>All day Monday and Wednesday AND 12pm on Weekdays</th>
+          <th>All other times</th>
+        </tr>
+        <tr>
+          <td>Standard Adult</td>
+          <td>STA</td>
+          <td>14.00</td>
+          <td>19.80</td>
+        </tr>
+        <tr>
+          <td>Standard Concession</td>
+          <td>STP</td>
+          <td>12.50</td>
+          <td>17.50</td>
+        </tr>
+        <tr>
+          <td>Standard Child</td>
+          <td>STC</td>
+          <td>11.00</td>
+          <td>15.30</td>
+        </tr>
+        <tr>
+          <td>First Class Adult</td>
+          <td>FCA</td>
+          <td>24.00</td>
+          <td>30.00</td>
+        </tr>
+        <tr>
+          <td>First Class Concession</td>
+          <td>FCP/td>
+          <td>22.50</td>
+          <td>27.00</td>
+        </tr>
+        <tr>
+          <td>First Class Child</td>
+          <td>FCC</td>
+          <td>21.00</td>
+          <td>24.00</td>
+        </tr>
+      </table>
+    </div>
   </main>
 
   <footer>
     <div>&copy;
       <script>
         document.write(new Date().getFullYear());
-      </script> Put your name(s), student number(s) and group name here. Last modified
+      </script> Ngo Quang Khai, s3836387. Last modified
       <?= date ("Y F d  H:i", filemtime($_SERVER['SCRIPT_FILENAME'])); ?>.</div>
     <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web
       Programming course at RMIT University in Melbourne, Australia.</div>
