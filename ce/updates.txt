@@ -1,5 +1,7 @@
 Post Submission A2 Updates 
 15/4: Code the skeleton of the page
+16/4: Add about us content and some now showing content
+      Test some css code
 
 
 Post Submission A3 Updates 

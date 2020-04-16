@@ -59,6 +59,8 @@
           <p>Scroll down for more detail</p>
         </div>
       </div>
+
+      <!--Seatings-->
       <div class="container-fluid">
         <div class="row">
           <div class="col">
@@ -68,6 +70,40 @@
             <p>We have upgraded our seating option for your comfort. Our options range from your standard seats to newly
               super comfy first-class seats. </p>
           </div>
+        </div>
+      </div>
+      <script>
+        $(function () {
+          $('#myTab li:first-child a').tab('show')
+        })
+      </script>
+      <!--Dolby system-->
+      <div class="container">
+        <ul class="nav nav-pills" id="myTab">
+          <li class="nav-item"><a class="nav-link active" aria-controls="overview" data-toggle="pill" href="#overview" aria-selected="true">Overview</a></li>
+          <li class="nav-item"><a class="nav-link" data-toggle="pill" href="#Datmos" aria-selected="false">Dolby Atmos</a></li>
+          <li class="nav-item"><a class="nav-link" data-toggle="pill" href="#D3D" aria-selected="false">Dolby 3D</a></li>
+        </ul>
+        
+        <div class="tab-content">
+          <div id="overview" class="tab-pane active fade in">
+            <h4>Overview</h4>
+            <p>
+              Introducing our new services with the <strong>Dolby Atmos Sound system</strong>and <strong>Dolby 3D Vision</strong>
+              projection.
+            </p>
+          </div>
+          <div id="Datmos" class="tab-pane fade">
+            <h4>The Dolby Atmos Sound</h4>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat.</p>
+          </div>
+          <div id="D3D" class="tab-pane fade">
+            <h4>The Dolby 3D projection</h4>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
+              rem aperiam.</p>
+          </div>
+          
         </div>
       </div>
     </div>
