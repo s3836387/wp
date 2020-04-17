@@ -1,18 +1,67 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap');
-#tprice{
-    table-layout: fixed;
-    width: 100%;
+/*#f7efd8 #f4a24f #c63434 #580f0c #010000*/
+html{
+    scroll-behavior: smooth;
+}
+body, html {
+    height: 100%;
+  }
+div.sticky{
+    position: sticky;
+    top: 0;
+    z-index: 9;
 }
 #logo{
     font-family: 'Bungee Inline', cursive;
     font-size: 50px;
     background-color:white;
+    text-align: center;
 }
-
+.parallax1 {
+    /* The image used */
+    background-image: url("Cinema.jpg");
+  
+    /* Set a specific height */
+    height: 600px;
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .parallax2 {
+    /* The image used */
+    background-image: url("brown-brick-wall-207142.jpg");
+  
+    /* Set a specific height */
+    height: 100%;
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .float-box{
+      padding: 15px;
+      background-color: rgba(242, 222, 214, 0.7);
+      text-align: center;
+  }
+.sectionHeader{
+    padding: 10px;
+}
+h2{
+    text-align: center;
+}
 /*list in card*/
 ul.card-text{
     list-style-type: none;
     margin: 0;
     padding: 0;
+}
+#tprice{
+    table-layout: fixed;
+    width: 100%;
 }
