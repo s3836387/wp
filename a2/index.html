@@ -79,31 +79,37 @@
       </script>
       <!--Dolby system-->
       <div class="container">
-        <ul class="nav nav-pills" id="myTab">
-          <li class="nav-item"><a class="nav-link active" aria-controls="overview" data-toggle="pill" href="#overview" aria-selected="true">Overview</a></li>
-          <li class="nav-item"><a class="nav-link" data-toggle="pill" href="#Datmos" aria-selected="false">Dolby Atmos</a></li>
-          <li class="nav-item"><a class="nav-link" data-toggle="pill" href="#D3D" aria-selected="false">Dolby 3D</a></li>
+        <h2>Toggleable Pills</h2>
+        <br>
+        <!-- Nav pills -->
+        <ul class="nav nav-pills" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="pill" href="#home">What's new?</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#Datmos">Dolby Atmmos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#D3d">Dolby 3D</a>
+          </li>
         </ul>
-        
+
+        <!-- Tab panes -->
         <div class="tab-content">
-          <div id="overview" class="tab-pane active fade in">
-            <h4>Overview</h4>
-            <p>
-              Introducing our new services with the <strong>Dolby Atmos Sound system</strong>and <strong>Dolby 3D Vision</strong>
-              projection.
-            </p>
+          <div id="home" class="container tab-pane active"><br>
+            <h4>What's new?</h4>
+            <p>Introducing our new services with the Dolby Atmos sound system and Dolby 3D Vision projection.</p>
           </div>
-          <div id="Datmos" class="tab-pane fade">
-            <h4>The Dolby Atmos Sound</h4>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat.</p>
+          <div id="Datmos" class="container tab-pane fade"><br>
+            <h3>Dolby Atmmos</h3>
+            <p>The Dolby Atmos sound system will enhance your movie experience. With audio objects and overhead speakers
+              all around the room, the Dolby Atmos sound system capable of delivering a powerful and moving audio.</p>
           </div>
-          <div id="D3D" class="tab-pane fade">
-            <h4>The Dolby 3D projection</h4>
-            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
-              rem aperiam.</p>
+          <div id="D3d" class="container tab-pane fade"><br>
+            <h3>Menu 2</h3>
+            <p>The Dolby 3D vision projection, along with the Dolby 3D glasses, will deliver a full, vivid and crisp
+              image for your viewing. It will undoubtedly bring your movie experience to a whole new level.</p>
           </div>
-          
         </div>
       </div>
     </div>
