@@ -2,7 +2,10 @@ Post Submission A2 Updates
 15/4: Code the skeleton of the page
 16/4: Add about us content and some now showing content
       Test some css code
-
+17/4: Add css code for about us and test css code for now showning
+18/4: Fixing card and sticky function on nav
+      Add half css code for now showing
+19/4: Fixing code for now showing and add the rest css of code
 
 Post Submission A3 Updates 
 
