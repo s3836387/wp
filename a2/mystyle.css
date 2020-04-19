@@ -1,25 +1,68 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat&family=Montserrat:wght@800&display=swap');
 /*#f7efd8 #f4a24f #c63434 #580f0c #010000*/
+
 html{
     scroll-behavior: smooth;
 }
 body, html {
     height: 100%;
+    scroll-padding-top: 65px;
+    
   }
-div.sticky{
-    position: sticky;
-    top: 0;
-    z-index: 9;
+body{
+    font-family: 'Montserrat', sans-serif;
 }
+ /* Navigation bar*/
+#navbar {
+    overflow: hidden;
+    background-color: #160101;
+}
+footer{
+    background-color: #160101;
+    color: #f7efd8;
+}
+a:link, a:visited {
+    color:#f7efd8 ;
+    padding: 5px;
+}
+a:hover, a:active{
+    background-color:#c63434 ;
+    color:#f7efd8 ;
+    padding: 5px;
+
+}
+.card a:link, a:visited{
+    background-color:#f4a24f ;
+}
+.card a:hover, a:active{
+    text-decoration: none;
+    background-color:#c63434 ;
+    color:#f7efd8 ;
+    padding: 5px;
+}
+.card a{
+    justify-content: center;
+}
+#navbar a{
+    padding: 10px;
+    offset-anchor: 10px;
+}
+
+/* Logo */
 #logo{
     font-family: 'Bungee Inline', cursive;
     font-size: 50px;
-    background-color:white;
+    background-color:#160101;
+    color: #c63434;
     text-align: center;
 }
+
+/*  Parallax pict*/
 .parallax1 {
     /* The image used */
+    /**/
     background-image: url("Cinema.jpg");
   
     /* Set a specific height */
@@ -43,25 +86,185 @@ div.sticky{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
+    padding-top: 10px; 
+    padding-bottom: 15px;
   }
-  .float-box{
-      padding: 15px;
-      background-color: rgba(242, 222, 214, 0.7);
-      text-align: center;
-  }
-.sectionHeader{
-    padding: 10px;
+  /*  Table  */
+  #tprice{
+    table-layout: fixed;
+    width: 100%;
+    background-color:#dfd0a9 ;
+    margin-bottom: 0px;
 }
-h2{
+
+/* What's new*/
+#new {
+    display: block;
     text-align: center;
+    background-color: #160101;
+    padding: 10px;
+    border: 6px dotted #f4a24f;
+    box-shadow: 1px 1px 2px black, 0 0 25px #f7efd8, 0 0 5px #f4a24f;
 }
+#new span{
+    color: #f7efd8;
+    
+}
+#new h4{
+    font-family: 'Lobster', cursive;
+    font-size: 45px;
+    color: #c63434;
+    text-shadow: 1px 1px 2px black, 0 0 25px #c63434, 0 0 5px #580f0c;
+    
+}
+/*Seating*/
+#seating {
+    background-image: url('seats.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+    }
+
+#seating-content p{
+    color: #f7efd8;
+    height: 150px;
+    width: 25%;
+    text-align: center;
+    position: relative;
+    top: 160px;
+    left: 10%;
+}
+#seating-content h5{
+    font-family:'Lobster', cursive;
+    font-size: 40px;
+    color: #c63434;
+    position: relative;
+    top: 90px;
+    left: 13%;
+    display: inline;
+    border: 4px dotted;
+    border-color: #f4a24f;
+    padding: 10px;
+    text-shadow: 1px 1px 2px black, 0 0 25px #c63434, 0 0 5px #580f0c;
+    box-shadow: 1px 1px 2px #f4a24f, 0 0 25px #f7efd8, 0 0 5px #f4a24f;
+}
+/*Dolby system*/
+#Dolby-system {
+    background-image: url('Dolby.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+    }
+#Dolby-content p{
+    color: #f7efd8;
+    height: 150px;
+    width: 50%;
+    text-align: center;
+    position: relative;
+    top: 160px;
+    left: 50%;
+}
+#Dolby-content h5{
+    font-family:'Lobster', cursive;
+    font-size: 40px;
+    color: #c63434;
+    position: relative;
+    top: 90px;
+    left: 60%;
+    right: 13%;
+    display: inline;
+    border: 4px dotted;
+    border-color: #f4a24f;
+    padding: 10px;
+    text-shadow: 1px 1px 2px black, 0 0 25px #c63434, 0 0 5px #580f0c;
+    box-shadow: 1px 1px 2px #f4a24f, 0 0 25px #f7efd8, 0 0 5px #f4a24f;
+}
+#mytabs{
+    padding: 0px;
+}
+#mytabs li a{
+    color: #f7efd8;
+    background-color: #160101;
+}
+#mytabs li a.active{
+    background-color: #c63434;
+}
+.float-box{     
+      padding: 20px 30px;
+      width: 500px;
+      height: 400px;
+      background-color: rgba(161, 159, 150, 0.8);
+      text-align: center;
+      z-index: -1;
+ }
+
+  #lobster{
+    font-family: 'Lobster', cursive;
+    font-size: 40px;
+  }
+ .sectionHeader{
+    background-color: #f8f0d4;
+    padding: 10px 0px;
+    border:4px solid black ;
+
+}
+.sectionHeader h2{
+    font-weight: 800;
+    font-size:40px;
+    padding: 0px 0px;
+    border-top: 2px solid #c4beab ;
+    border-bottom: 2px solid #c4beab;
+    text-align: center;
+    text-shadow: 0 0 3px grey;
+}
+
 /*list in card*/
-ul.card-text{
+#nowShowing,#prices{
+    padding: 0px;
+}
+#nowShowing-content{
+    padding-top: 10px;
+    /* The image used */
+    background-image: url("brown-brick-wall-207142.jpg");
+  
+    /* Set a specific height */
+    height: 100%;
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.card{
+    background-color: rgba(36, 1, 1, 0.7);
+    border: 3px dotted #f4a24f;
+}
+.card-text{
+    text-align: center;
     list-style-type: none;
     margin: 0;
     padding: 0;
+    color: #f7efd8;
 }
-#tprice{
-    table-layout: fixed;
-    width: 100%;
+
+.card-title{
+    text-align: center;
+    color: #c63434;
+    font-weight: 800;
+}
+#synopsis{
+    background-color: #1a0000;
+    padding: 20px;
+}
+#synopsis-content{
+    background-color: #f7efd8;
+    padding: 20px;
+    border: 2px solid #f4a24f;
+}
+#booking{
+    padding: 0px;
 }
