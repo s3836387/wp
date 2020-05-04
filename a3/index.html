@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang='en'>
+ <!--
+   Author: Ngo QUang Khai
+ -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Assignment 2</title>
+
+  <!-- Bootstrap 4 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+  <!-- Keep wireframe.css for debugging, add your css to style.css -->
+  <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>
+  <link id='stylecss' type="text/css" rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="mystyle.css">
+  <script src='../wireframe.js'></script>
+</head>
+
+<body>
+
+  <header>
+    <div id="logo">Cinemax</div>
+  </header>
+
+  <main>
+
+    <!--Navigation area-->
+    <nav id="navbar" class="navbar justify-content-center sticky-top">
+      <!--Links-->
+      <a class="navbar-brand active" href="#home">Home</a>
+      <a class="navbar-brand" href="#aboutUs">About Us</a>
+      <a class="navbar-brand" href="#nowShowing">Now Showing</a>
+      <a class="navbar-brand" href="#prices">Prices</a>
+    </nav>
+
+    <div class="parallax1" id="home"></div>
+    <!--About us section-->
+    <div id="aboutUs">
+      <div class="sectionHeader">
+        <h2>ABOUT US</h2>
+      </div>
+      <div class="parallax2">
+        <div id="welcome" class="container float-box">
+          <h5 id="lobster">Welcome back!</h5>
+          <br>
+          <h4>Loyal customer and newcomer.</h4>
+          <p>We are happy to introduce you to our new and improve cinema after our period of renovation. For our new
+            customers, we are a small long-running cinema at (location). We take pride in our high-quality service at an
+            affordable price which you can view below. For our loyal customers, our newly improve sound and new 3D
+            projection facilities will surely make you want more.</p>
+          <div>Scroll down for more detail</div>
+        </div>
+      </div>
+
+      <!--What's new-->
+      <div id="new">
+        <h4>What's new?</h4>
+        <span>Introducing our new services with the Dolby Atmos sound system and Dolby 3D Vision projection.</span>
+      </div>
+      <!--Seatings-->
+      <div id="seating" class="container-fluid">
+        <div id="seating-content">
+          <div class="container"><h5>New seating</h5></div>
+          <p>We have upgraded our seating options for your comfort. Our options range from your standard seats to
+            newly
+            super comfy first-class seats. </p>
+        </div>
+      </div>
+
+      <!--Dolby system-->
+      <div id="Dolby-system" class="container-fluid">
+        <div id="Dolby-content">
+          <div class="container"><h5>New Dolby system</h5></div>
+          <p><strong>The Dolby Atmos</strong> sound system will enhance your movie experience. With audio objects and
+            overhead speakers
+            all around the room, the Dolby Atmos sound system capable of delivering a powerful and moving audio.
+            <br> <strong>The Dolby 3D vision</strong> projection, along with the Dolby 3D glasses, will deliver a
+            full, vivid and crisp
+            image for your viewing. It will undoubtedly bring your movie experience to a whole new level.</p>
+        </div>
+      </div>
+    </div>
+
+    <!--Now Showing-->
+    <div id="nowShowing" class="container-fluid">
+      <div class="container-fluid sectionHeader">
+        <h2>NOW SHOWING</h2>
+      </div>
+      <div id="nowShowing-content" class="container-fluid" style="padding-top: 10px;">
+        <div class="row">
+          <!--Avenger card-->
+          <div class="col-md">
+            <div class="card sm-3" style="max-width: 600px;">
+              <div class="row no-gutters">
+                <div class="col-md-5">
+                  <img class="card-img"
+                    src="Avenger-end-game.jpg" alt="Card image">
+                </div>
+                <div class="col-md-7 text-center">
+                  <div class="card-body">
+                    <h4 class="card-title">Avengers: Endgame</h4>
+                    <p class="card-text">Rated: PG-13</p>
+                    <ul class="card-text">
+                      <li>Wednesday | 9pm (T21) </li>
+                      <li>Thursday | 9pm (T21) </li>
+                      <li>Friday | 9pm (T21) </li>
+                      <li>Saturday | 6pm (T18) </li>
+                      <li>Sunday | 6pm (T18) </li>
+                    </ul>
+                    <a href="#ACT" class="stretched-link">Detail</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Wedding card-->
+          <div class="col-md">
+            <div class="card mb-3" style="max-width: 600px;">
+              <div class="row no-gutters">
+                <div class="col-md-5">
+                  <img class="card-img" src="top-end-wedding.jpg" alt="Card image">
+                </div>
+                <div class="col-md-7 text-center">
+                  <div class="card-body">
+                    <h4 class="card-title">Top End Wedding</h4>
+                    <p class="card-text">Rated: MA</p>
+                    <ul class="card-text">
+                      <li>Monday | 6pm (T18) </li>
+                      <li>Tuesday | 6pm (T18) </li>
+                      <li>Saturday | 3pm (T15) </li>
+                      <li>Sunday | 3pm (T15) </li>
+                    </ul>
+                    <a href="#ACT" class="stretched-link">Detail</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        <div class="w-100"></div>
+          <!--Dumbo-->
+          <div class="col-md">
+            <div class="card mb-3" style="max-width: 600px;">
+              <div class="row no-gutters">
+                <div class="col-md-5">
+                  <img class="card-img" src="dumbo.jpg" alt="Card image">
+                </div>
+                <div class="col-md-7 text-center">
+                  <div class="card-body">
+                    <h4 class="card-title">Dumbo</h4>
+                    <p class="card-text">Rated: PG</p>
+                    <ul class="card-text">
+                      <li>Monday | 12pm (T12) </li>
+                      <li>Tuesday | 12pm (T12) </li>
+                      <li>Wednesday | 6pm (T18) </li>
+                      <li>Thursday | 6pm (T18) </li>
+                      <li>Friday | 6pm (T18) </li>
+                      <li>Saturday | 12pm (T12) </li>
+                      <li>Sunday | 12pm (T12) </li>
+                    </ul>
+                    <a href="#ACT" class="stretched-link">Detail</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--The prince-->
+          <div class="col-md">
+            <div class="card mb-3" style="max-width: 600px;">
+              <div class="row no-gutters">
+                <div class="col-md-5">
+                  <img class="card-img" src="The-Happy-Prince-New-Poster.jpg" alt="Card image">
+                </div>
+                <div class="col-md-7 text-center">
+                  <div class="card-body">
+                    <h4 class="card-title">The Happy Prince</h4>
+                    <p class="card-text">Rated: R</p>
+                    <ul class="card-text">
+                      <li>Wednesday | 12pm (T12) </li>
+                      <li>Thursday | 12pm (T12) </li>
+                      <li>Friday | 12pm (T12) </li>
+                      <li>Saturday | 9pm (T21) </li>
+                      <li>Sunday | 9pm (T21) </li>
+                    </ul>
+                    <a href="#ACT" class="stretched-link">Detail</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Prices-->
+    <div id="prices" class="container-fluid">
+      <div class="sectionHeader">
+        <h2>OUR PRICES</h2>
+      </div>
+
+      <table id="tprice" class="table table-border table-striped table-hover">
+        <tr>
+          <th>Seat Type</th>
+          <th>Seat Code</th>
+          <th>All day Monday and Wednesday AND 12pm on Weekdays</th>
+          <th>All other times</th>
+        </tr>
+        <tr>
+          <td>Standard Adult</td>
+          <td>STA</td>
+          <td>14.00 &#36;</td>
+          <td>19.80 &#36;</td>
+        </tr>
+        <tr>
+          <td>Standard Concession</td>
+          <td>STP</td>
+          <td>12.50 &#36;</td>
+          <td>17.50 &#36;</td>
+        </tr>
+        <tr>
+          <td>Standard Child</td>
+          <td>STC</td>
+          <td>11.00 &#36;</td>
+          <td>15.30 &#36;</td>
+        </tr>
+        <tr>
+          <td>First Class Adult</td>
+          <td>FCA</td>
+          <td>24.00 &#36;</td>
+          <td>30.00 &#36;</td>
+        </tr>
+        <tr>
+          <td>First Class Concession</td>
+          <td>FCP</td>
+          <td>22.50 &#36;</td>
+          <td>27.00 &#36;</td>
+        </tr>
+        <tr>
+          <td>First Class Child</td>
+          <td>FCC</td>
+          <td>21.00 &#36;</td>
+          <td>24.00 &#36;</td>
+        </tr>
+      </table>
+    </div>
+
+    <!--Synopsis Area-->
+    <div id="synopsis">
+      <div id="synopsis-content" class="container">
+        <div id="ACT" class="row">
+          <div class="col-md-7 ">
+            <h3>Avengers Endgame</h3>
+            <h4>Rated: PG-13</h4>
+            <h5>Plot summary</h5>
+            <p>After the devastating events of Avengers: Infinity war (2018), the universe is in ruins. With the help
+              of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore
+              balance
+              to the universe.</p>
+            <h5>Make a Booking:</h5>
+            <ul class="nav">
+              <li class="nav-item ">
+                <a class="nav-link" href="#booking">Wednesday | 9pm (T21)</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#booking">Thursday | 9pm (T21)</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#booking">Friday | 9pm (T21)</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#booking">Saturday | 6pm (T18)</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#booking">Sunday | 6pm (T18)</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-5">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/TcMBFSGVi1c" frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Booking are-->
+    <div id="booking" class="container-fluid">
+      <div class="sectionHeader">
+        <h2>Booking</h2>
+      </div>
+      <div class="parallax2">
+        <div class="container float-box">
+          <h5> Under construction</h5>
+          <br>
+          <h4>Loyal customer and newcomer.</h4>
+          <label for="name">Your name:</label>
+          <input type="text" name="name1" id= 'name'>
+          <br>
+          <label for="email">Email:</label>
+          <input type="text" name="email1" id= 'email'>
+          <br>
+          <label for="pnumber">Phone number:</label>
+          <input type="number" name="pnumber" id= 'pnumber'>
+          <br>
+          <label for="cusId">Your ID:</label>
+          <input type="text" name="custID1" id = 'cusId' placeholder="Input your ID">
+          
+          
+        </div>
+      </div>
+
+    </div>
+    <script src="script.js"></script>
+  </main>
+
+  <footer>
+    <div>&copy;
+      <script>
+        document.write(new Date().getFullYear());
+      </script> Ngo Quang Khai, s3836387 , githut link: https://github.com/s3836387/wp. Last modified
+      <?= date ("Y F d  H:i", filemtime($_SERVER['SCRIPT_FILENAME'])); ?>.</div>
+    <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web
+      Programming course at RMIT University in Melbourne, Australia.</div>
+    <div><button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button></div>
+  </footer>
+
+</body>
+
+</html>
