@@ -9,10 +9,32 @@ window.addEventListener("scroll", event => {
 
         if (section.offsetTop - 75 <= viewTop &&
             section.offsetTop + section.offsetHeight - 100 > viewTop) {
-            console.log(link.hash);
             link.classList.add('active');
         } else {
             link.classList.remove('active');
         }
     });
 });
+
+/* More detail synoposis*/
+
+
+function moreDetailToggle(movieid) {
+  let x = document.getElementById(movieid);
+  let synoposis = document.getElementsByClassName("synopsis");
+  for (i = 0 ; i < synoposis.length; i++){
+    let y= synoposis[i];
+    if (y.id != movieid){
+      if (y.style.display === "block") {
+        y.style.display = "none";
+      }
+    }
+  }
+  if (x.style.display === "none") {
+    
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+document.getElementById("RMC-btn").addEventListener("click", moreDetailToggle("RMC"));

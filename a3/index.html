@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang='en'>
- <!--
+<!--
    Author: Ngo QUang Khai
  -->
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -65,7 +66,9 @@
       <!--Seatings-->
       <div id="seating" class="container-fluid">
         <div id="seating-content">
-          <div class="container"><h5>New seating</h5></div>
+          <div class="container">
+            <h5>New seating</h5>
+          </div>
           <p>We have upgraded our seating options for your comfort. Our options range from your standard seats to
             newly
             super comfy first-class seats. </p>
@@ -75,7 +78,9 @@
       <!--Dolby system-->
       <div id="Dolby-system" class="container-fluid">
         <div id="Dolby-content">
-          <div class="container"><h5>New Dolby system</h5></div>
+          <div class="container">
+            <h5>New Dolby system</h5>
+          </div>
           <p><strong>The Dolby Atmos</strong> sound system will enhance your movie experience. With audio objects and
             overhead speakers
             all around the room, the Dolby Atmos sound system capable of delivering a powerful and moving audio.
@@ -98,8 +103,7 @@
             <div class="card sm-3" style="max-width: 600px;">
               <div class="row no-gutters">
                 <div class="col-md-5">
-                  <img class="card-img"
-                    src="Avenger-end-game.jpg" alt="Card image">
+                  <img class="card-img" src="Avenger-end-game.jpg" alt="Card image">
                 </div>
                 <div class="col-md-7 text-center">
                   <div class="card-body">
@@ -112,7 +116,9 @@
                       <li>Saturday | 6pm (T18) </li>
                       <li>Sunday | 6pm (T18) </li>
                     </ul>
-                    <a href="#ACT" class="stretched-link">Detail</a>
+                    <a href="#ACT" class="stretched-link" onclick="moreDetailToggle('ACT')">
+                      Detail
+                    </a>
                   </div>
                 </div>
               </div>
@@ -135,15 +141,15 @@
                       <li>Saturday | 3pm (T15) </li>
                       <li>Sunday | 3pm (T15) </li>
                     </ul>
-                    <a href="#ACT" class="stretched-link">Detail</a>
+                    <a id="RMC-btn" href="#RMC" class="stretched-link" onclick="moreDetailToggle('RMC')"> Detail</a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        
-        <div class="w-100"></div>
-          <!--Dumbo-->
+        </div>
+        <div class="row">
+          <!--Dumbo card-->
           <div class="col-md">
             <div class="card mb-3" style="max-width: 600px;">
               <div class="row no-gutters">
@@ -163,7 +169,7 @@
                       <li>Saturday | 12pm (T12) </li>
                       <li>Sunday | 12pm (T12) </li>
                     </ul>
-                    <a href="#ACT" class="stretched-link">Detail</a>
+                    <a href="#ANM" class="stretched-link" onclick="moreDetailToggle('ANM')">Detail</a>
                   </div>
                 </div>
               </div>
@@ -187,11 +193,165 @@
                       <li>Saturday | 9pm (T21) </li>
                       <li>Sunday | 9pm (T21) </li>
                     </ul>
-                    <a href="#ACT" class="stretched-link">Detail</a>
+                    <a href="#AHF" class="stretched-link" onclick="moreDetailToggle('AHF')">Detail</a>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Synopsis Area-->
+    <!-- Avenger -->
+    <div id="ACT" class="synopsis">
+      <div class="container synopsis-content">
+        <div class="row">
+          <div class="col-md-7 ">
+            <h3>Avengers Endgame</h3>
+            <h4>Rated: PG-13</h4>
+            <h5>Plot summary</h5>
+            <p>After the devastating events of Avengers: Infinity war (2018), the universe is in ruins. With the help
+              of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore
+              balance
+              to the universe.</p>
+            <h5>Make a Booking:</h5>
+            <ul class="nav">
+              <li class="nav-item ">
+                <a class="nav-link" href="#booking">Wednesday | 9pm (T21)</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#booking">Thursday | 9pm (T21)</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#booking">Friday | 9pm (T21)</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#booking">Saturday | 6pm (T18)</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#booking">Sunday | 6pm (T18)</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-5">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/TcMBFSGVi1c" frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wedding -->
+    <div id="RMC" class="synopsis">
+      <div class="container synopsis-content">
+        <div class="row">
+          <div class="col-md-7 ">
+            <h3>Top End Wedding</h3>
+            <h4>Rated: MA</h4>
+            <h5>Plot summary</h5>
+            <p>Lauren and Ned are engaged, they are in love, and they have just ten days to find Lauren's mother who has
+              gone AWOL somewhere in the remote far north of Australia, reunite her parents and pull off their dream
+              wedding.</p>
+            <h5>Make a Booking:</h5>
+            <ul class="nav">
+              <li class="nav-item ">
+                <a class="nav-link" href="#booking">Wednesday | 9pm (T21)</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#booking">Thursday | 9pm (T21)</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#booking">Friday | 9pm (T21)</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#booking">Saturday | 6pm (T18)</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#booking">Sunday | 6pm (T18)</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-5">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/uoDBvGF9pPU" frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dumbo -->
+    <div id="ANM" class="synopsis">
+      <div class="container synopsis-content">
+        <div class="row">
+          <div class="col-md-7 ">
+            <h3>Dumbo</h3>
+            <h4>Rated: PG</h4>
+            <h5>Plot summary</h5>
+            <p>A young elephant, whose oversized ears enable him to fly, helps save a struggling circus, but when the
+              circus plans a new venture, Dumbo and his friends discover dark secrets beneath its shiny veneer.</p>
+            <h5>Make a Booking:</h5>
+            <ul class="nav">
+              <li class="nav-item ">
+                <a class="nav-link" href="#booking">Wednesday | 9pm (T21)</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#booking">Thursday | 9pm (T21)</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#booking">Friday | 9pm (T21)</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#booking">Saturday | 6pm (T18)</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#booking">Sunday | 6pm (T18)</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-5">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/7NiYVoqBt-8" frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- The Prince -->
+    <div id="AHF" class="synopsis">
+      <div class="container synopsis-content">
+        <div class="row">
+          <div class="col-md-7 ">
+            <h3>The Happy Prince</h3>
+            <h4>Rated: R</h4>
+            <h5>Plot summary</h5>
+            <p>
+              The untold story of the last days in the tragic times of Oscar Wilde, a person who observes his own
+              failure with ironic distance and regards the difficulties that beset his life with detachment and humor.
+            </p>
+            <h5>Make a Booking:</h5>
+            <ul class="nav">
+              <li class="nav-item ">
+                <a class="nav-link" href="#booking">Wednesday | 9pm (T21)</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#booking">Thursday | 9pm (T21)</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#booking">Friday | 9pm (T21)</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#booking">Saturday | 6pm (T18)</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#booking">Sunday | 6pm (T18)</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-5">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/bE2a5fzLvYI" frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
         </div>
       </div>
@@ -249,44 +409,6 @@
       </table>
     </div>
 
-    <!--Synopsis Area-->
-    <div id="synopsis">
-      <div id="synopsis-content" class="container">
-        <div id="ACT" class="row">
-          <div class="col-md-7 ">
-            <h3>Avengers Endgame</h3>
-            <h4>Rated: PG-13</h4>
-            <h5>Plot summary</h5>
-            <p>After the devastating events of Avengers: Infinity war (2018), the universe is in ruins. With the help
-              of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore
-              balance
-              to the universe.</p>
-            <h5>Make a Booking:</h5>
-            <ul class="nav">
-              <li class="nav-item ">
-                <a class="nav-link" href="#booking">Wednesday | 9pm (T21)</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#booking">Thursday | 9pm (T21)</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#booking">Friday | 9pm (T21)</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#booking">Saturday | 6pm (T18)</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#booking">Sunday | 6pm (T18)</a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-md-5">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/TcMBFSGVi1c" frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
     <!--Booking are-->
     <div id="booking" class="container-fluid">
       <div class="sectionHeader">
@@ -298,18 +420,18 @@
           <br>
           <h4>Loyal customer and newcomer.</h4>
           <label for="name">Your name:</label>
-          <input type="text" name="name1" id= 'name'>
+          <input type="text" name="name1" id='name'>
           <br>
           <label for="email">Email:</label>
-          <input type="text" name="email1" id= 'email'>
+          <input type="text" name="email1" id='email'>
           <br>
           <label for="pnumber">Phone number:</label>
-          <input type="number" name="pnumber" id= 'pnumber'>
+          <input type="number" name="pnumber" id='pnumber'>
           <br>
           <label for="cusId">Your ID:</label>
-          <input type="text" name="custID1" id = 'cusId' placeholder="Input your ID">
-          
-          
+          <input type="text" name="custID1" id='cusId' placeholder="Input your ID">
+
+
         </div>
       </div>
 
