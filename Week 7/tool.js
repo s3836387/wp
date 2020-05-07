@@ -12,7 +12,11 @@ window.addEventListener("scroll", event => {
   });
 
 });
-
+/* Get element id */
+function getid(x){
+ return document.getElementById(x);
+}
+/* Show/hide synoposis area */
 var synoposis = document.getElementsByClassName("synop");
 console.log(synoposis[0].id);
 
@@ -31,4 +35,12 @@ function myFunction(movieid) {
   } else {
     x.style.display = "none";
   }
+}
+
+/* Form functions */
+function addHeader(id, day){
+  getid('formHeader').innerHTML ='';
+  let title= getid('title'+id).innerHTML;
+  let p = getid(day+id).innerHTML.split(" ");
+  getid("formHeader").innerHTML = "<h3>"+ title +" "+ p[0]+ " " + p[2]+ "</h3>";
 }

@@ -8,7 +8,8 @@ Post Submission A2 Updates
 19/4: Fixing code for now showing and add the rest css of code
 
 Post Submission A3 Updates 
-
+4/5: Implement nav bar hightlight
+5/5: Test show/hide of synoposis area and implement
 
 
 Post Submission A4 Updates 

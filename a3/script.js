@@ -37,4 +37,3 @@ function moreDetailToggle(movieid) {
     x.style.display = "none";
   }
 }
-document.getElementById("RMC-btn").addEventListener("click", moreDetailToggle("RMC"));

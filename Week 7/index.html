@@ -5,37 +5,166 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
   <nav>
-    <ul id="mainNav">
+    <!--<ul id="mainNav">
       <li class="nav-link"><a href="#home">Home</a></li>
       <li class="nav-link"><a href="#work">Work</a></li>
       <li class="nav-link"><a href="#about">About</a></li>
       <li class="nav-link"><a href="#contact">Contact</a></li>
-    </ul>
+    </ul>-->
   </nav>
   <section id="home">
     <h2>Home</h2>
-    <a href="#myDIV1" >
-      <button onclick="myFunction('myDIV1')">
-        Click Me
-      </button>
-    </a>
-    
-      <button href="#myDIV2" onclick="myFunction('myDIV2')">Click Me</button>
+    <div id="ACT" name="avenger-end-game"> 
+      <h4 id="titleACT">Anvenger</h4>
+      <button id="wedACT" onclick="addHeader('ACT', 'wed')">Wednesday | 9pm (T21)</button>
+      <button id="thuACT" onclick="addHeader('ACT', 'thu')">Thursday | 9pm (T21)</button>
+    </div>
+
+    <div class="container">
+      <form>
+        <input type="hidden" id="movieId" name="movieId" value="">
+        <input type="hidden" id="movieDay" name="movieDay" value="">
+        <input type="hidden" id="movieHour" name="movieHour" value="">
+
+        <span id="formHeader"></span>
+
+        <div class="form-row">
+          <div class="col-md-4">
+            <h4>Standard</h4>
+            <div style="border: solid black; padding: 10px; margin: 10px;">
+              <div class="form-inline">
+                <label class="mb-2 mr-sm-2" for="numAdultsSTA">Adult</label>
+                <select class="form-control mb-2 mr-sm-2" id="numAdultsSTA">
+                  <option selected>Choose</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+              </div>
+
+              <div class="form-inline">
+                <label class="mb-2 mr-sm-2 right-align-item" for="numConcSTA">Concession</label>
+                <select class="form-control mb-2 mr-sm-2" id="numConcSTA">
+                  <option selected>Choose</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+              </div>
+              <div class="form-inline">
+                <label class="mb-2 mr-sm-2" for="numChildSTA">Children</label>
+                <select class="form-control mb-2 mr-sm-2" id="numChildSTA">
+                  <option selected>Choose</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+              </div>
+            </div>
+            <h4>First Class</h4>
+            <div style="border: solid black; padding: 10px; margin: 10px;">
+              <div class="form-inline">
+                <label class="mb-2 mr-sm-2" for="numAdultsFC">Adult</label>
+                <select class="form-control mb-2 mr-sm-2" id="numAdultsFC">
+                  <option selected>Choose</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+              </div>
+
+              <div class="form-inline">
+                <label class="mb-2 mr-sm-2 right-align-item" for="numConcFC">Concession</label>
+                <select class="form-control mb-2 mr-sm-2" id="numConcFC">
+                  <option selected>Choose</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+              </div>
+              <div class="form-inline">
+                <label class="mb-2 mr-sm-2" for="numChildFC">Children</label>
+                <select class="form-control mb-2 mr-sm-2" id="numChildFC">
+                  <option selected>Choose</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+              </div>
+            </div>
+            <!-- Total -->
+            <div class="form-group row">
+              <label for="staticTotal" class="col-sm-3 col-form-label">Total &#36;</label>
+              <div class="col-sm-2">
+                <input type="text" readonly class="form-control-plaintext" id="staticTotal" value="">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <h4>Billing</h4>
+            <div class="form-group">
+              <label for="inputName4">Name</label>
+              <input type="text" class="form-control" id="inputName4" placeholder="Personie Person">
+            </div>
+
+            <div class="form-group">
+              <label for="inputPhonenum">Phone number</label>
+              <input type="tel" class="form-control" id="inputPhonenum" placeholder="01 1234 5678">
+            </div>
+
+            <div class="form-group">
+              <label for="inputEmail4">Email</label>
+              <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+            </div>
+
+            <div class="form-group">
+                <label for="ccnum">Credit card number</label>
+                <input type="text" class="form-control" id="inputccnum" placeholder="1111-2222-3333-4444">
+            </div>
+            <div class="form-group form-inline">
+              <label class="mb-2 mr-sm-2" for="inputExpdate">Expiry:</label>
+              <select class="form-control mb-2 mr-sm-2 ">
+                <option>MM</option>
+              </select>
+              <select class="form-control mb-2 mr-sm-2">
+                <option>YYYY</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Order</button>
+      </form>
+    </div>
+
 
   </section>
+
   <section id="work">
     <h2>Work</h2>
-
+    <button onclick="myFunction('myDIV1')">Click Me</button>
+    <button href="#myDIV2" onclick="myFunction('myDIV2')">Click Me</button>
     <div id="myDIV1" class="synop" style="display: none;">
       This is my DIV element.
     </div>
-
     <div id="myDIV2" class="synop" style="display: none;">
       This is my DIV 2 element.
     </div>
