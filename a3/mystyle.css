@@ -290,3 +290,12 @@ div.synopsis{
 #booking{
     padding: 0px;
 }
+#bookingForm{
+    border: 2px solid #160101;
+    background-color: #fcefc8;
+    padding: 10px 10px;
+}
+input[pattern]:invalid {
+    border:2px red solid;
+    background-color:#fee;
+  }

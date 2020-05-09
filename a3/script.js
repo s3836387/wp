@@ -37,3 +37,14 @@ function moreDetailToggle(movieid) {
     x.style.display = "none";
   }
 }
+
+/* Form functions */
+function initializeSynop(id, day){
+  let title=  document.getElementById('title'+id).innerHTML;
+  let movieInfo =  document.getElementById(day+id).innerHTML.split(" ");
+  document.getElementById("movieId").value= id;
+  document.getElementById("movieHour").value=movieInfo[3].slice(1,4);
+  document.getElementById("movieDay").value= day.toUpperCase();
+  document.getElementById('formHeader').innerHTML ='';
+  document.getElementById("formHeader").innerHTML = "<h3>"+ title +" "+ movieInfo[0]+ " " + movieInfo[2]+ "</h3>";
+}
