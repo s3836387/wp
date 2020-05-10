@@ -36,14 +36,15 @@ function myFunction(movieid) {
 }
 
 /* Form functions */
-var weekdays = ['MON','TUE','WED','THU','FRI'];
-var discountdays = ['MON','TUE','WED'];
-var seatcode = ['STA', 'STP', 'STC', 'FCA','FCP','FCC']; /* Use indexof to calculate price total */
+var weekdays = ['MON', 'TUE', 'WED', 'THU', 'FRI'];
+var discountdays = ['MON', 'TUE', 'WED'];
+var seatcode = ['STA', 'STP', 'STC', 'FCA', 'FCP', 'FCC']; /* Use indexof to calculate price total */
 var movie_id = document.getElementById("movieId");
 var movie_hour = document.getElementById("movieHour");
-var movie_day =document.getElementById("movieDay");
+var movie_day = document.getElementById("movieDay");
 var funcYear = true;
-var total =0;
+var total = 0.00;
+
 var pricerate;
 
 function getYear() {
@@ -56,31 +57,44 @@ function getYear() {
     funcYear = false;
   }
 }
-function getRate(){
-  if((discountdays.includes(movie_day.value))||(movie_hour.value ==="T12" && weekdays.includes(movie_day.value))){
+function getRate() {
+  if ((discountdays.includes(movie_day.value)) || (movie_hour.value === "T12" && weekdays.includes(movie_day.value))) {
     pricerate = [14, 12.50, 11, 24, 22.50, 21];
-  }else{
+  } else {
     pricerate = [19.80, 17.50, 15.30, 30, 27, 24];
   }
 }
+
+function updateTotal() {
+  let seats = document.getElementsByClassName('seats');
+  let index;
+  let temp = 0;
+  for (i of seats) {
+    if (i.value.length != 0) {
+      index = seatcode.indexOf(i.id);
+      temp += i.value * pricerate[index];
+    }
+
+  }
+  if (total != temp) {
+    total = temp.toFixed(2);
+    document.getElementById('Total').value = total;
+  }
+}
 function initializeSynop(id, day) {
-  let title = getid('title' + id).innerHTML;
-  let movieInfo = getid(day + id).innerHTML.split(" ");
+  let title = document.getElementById('title' + id).innerHTML;
+  let movieInfo = document.getElementById(day + id).innerHTML.split(" ");
   movie_id.value = id;
   movie_hour.value = movieInfo[3].slice(1, 4);
   movie_day.value = movieInfo[0].slice(0, 3).toUpperCase();
-  getid('formHeader').innerHTML = '';
-  getid("formHeader").innerHTML = "<h3>" + title + " " + movieInfo[0] + " " + movieInfo[2] + "</h3>";
+  document.getElementById('formHeader').innerHTML = '';
+  document.getElementById("formHeader").innerHTML = "<h3>" + title + " " + movieInfo[0] + " " + movieInfo[2] + "</h3>";
   if (funcYear) {
     getYear();
   }
   getRate();
-}
-
-
-function calculateTotal(){
-  let seats = document.getElementsByClassName('seats');
-
+  updateTotal();
+  document.getElementById('booking').style.display = "block";
 }
 
 /* Clear error*/
@@ -176,11 +190,7 @@ function expCheck() {
 
 function formCheck() {
   let errorCount = 0;
-  if (!nameCheck() || !blankCheck('inputName', 'nameError')) errorCount++;
-  if (!phoneCheck() || !blankCheck('inputPhonenum', 'phoneError')) errorCount++;
-  if (!emailCheck() || !blankCheck('inputEmail', 'emailError')) errorCount++;
-  if (!ccCheck() || !blankCheck('inputccnum', 'ccError')) errorCount++;
-  if (!expCheck()) {errorCount++;}
-  console.log(errorCount == 0);
+  if (total === 0)errorCount++;
+  if (!expCheck()) { errorCount++; }
   return (errorCount == 0);
 }

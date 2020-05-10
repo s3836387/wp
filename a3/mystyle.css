@@ -287,6 +287,11 @@ div.synopsis{
 .synopsis-content h4{
     text-align: center;
 }
+a>button{
+    background: #f4a24f;
+    border: #f4a24f;
+    padding: 5px;
+}
 #booking{
     padding: 0px;
 }
@@ -294,8 +299,18 @@ div.synopsis{
     border: 2px solid #160101;
     background-color: #fcefc8;
     padding: 10px 10px;
+    display: none;
 }
-input[pattern]:invalid {
+#bookingPlaceholder h3{
+    background-color:#f4a24f ;
+    color:#c63434 ;
+    padding: 10px;
+    font-weight: 800;
+}
+.inputError {
     border:2px red solid;
     background-color:#fee;
+  }
+  .error {
+    color: red;
   }

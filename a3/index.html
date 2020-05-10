@@ -98,7 +98,7 @@
       </div>
       <div id="nowShowing-content" class="container-fluid" style="padding-top: 10px;">
         <div class="row">
-          <!--Avenger card-->
+          <!----- Avenger card ----->
           <div class="col-md">
             <div class="card sm-3" style="max-width: 600px;">
               <div class="row no-gutters">
@@ -204,7 +204,7 @@
       </div>
     </div>
 
-    <!--Synopsis Area-->
+    <!-- ------ Synopsis Area ------- -->
     <!-- Avenger -->
     <div id="synopsisACT" name="Avengers" class="synopsis">
       <div class="container synopsis-content">
@@ -219,17 +219,20 @@
               to the universe.</p>
             <h5>Make a Booking:</h5>
             <ul class="nav">
-              <button id="wedACT" onclick="initializeSynop('ACT', 'wed')">Wednesday | 9pm (T21)</button>
-              <button id="thuACT" onclick="initializeSynop('ACT', 'thu')">Thursday | 9pm (T21)</button>
-              <li class="nav-item">
-                <a class="nav-link" href="#booking">Friday | 9pm (T21)</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#booking">Saturday | 6pm (T18)</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#booking">Sunday | 6pm (T18)</a>
-              </li>
+              <a href="#booking">
+                <button id="wedACT" onclick="initializeSynop('ACT', 'wed')">Wednesday | 9pm (T21)</button>
+              </a>
+              <a href="#booking">
+                <button id="thuACT" onclick="initializeSynop('ACT', 'thu')">Thursday | 9pm (T21)</button>
+              </a>
+              <a href="#booking">
+                <button id="friACT" onclick="initializeSynop('ACT', 'fri')">Friday | 9pm (T21)</button>
+              </a>
+              <a href="#booking"><button id="satACT" onclick="initializeSynop('ACT', 'sat')">Saturday | 6pm
+                  (T18)</button></a>
+
+              <a href="#booking"> <button id="sunACT" onclick="initializeSynop('ACT', 'sun')">Sunday | 6pm
+                  (T18)</button></a>
             </ul>
           </div>
           <div class="col-md-5">
@@ -253,21 +256,17 @@
               wedding.</p>
             <h5>Make a Booking:</h5>
             <ul class="nav">
-              <li class="nav-item ">
-                <a class="nav-link" href="#booking">Wednesday | 9pm (T21)</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#booking">Thursday | 9pm (T21)</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#booking">Friday | 9pm (T21)</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#booking">Saturday | 6pm (T18)</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#booking">Sunday | 6pm (T18)</a>
-              </li>
+              <a href="#booking">
+                <button id="monRMC" onclick="initializeSynop('RMC', 'mon')">Monday | 6pm (T18)</button>
+              </a>
+              <a href="#booking">
+                <button id="tueRMC" onclick="initializeSynop('RMC', 'tue')">Tuesday | 6pm (T18)</button>
+              </a>
+              <a href="#booking">
+                <button id="satRMC" onclick="initializeSynop('RMC', 'sat')">Saturday | 3pm (T15)</button>
+              </a>
+              <a href="#booking"><button id="sunRMC" onclick="initializeSynop('RMC', 'sun')">Sunday | 3pm (T15)</button>
+              </a>
             </ul>
           </div>
           <div class="col-md-5">
@@ -290,21 +289,27 @@
               circus plans a new venture, Dumbo and his friends discover dark secrets beneath its shiny veneer.</p>
             <h5>Make a Booking:</h5>
             <ul class="nav">
-              <li class="nav-item ">
-                <a class="nav-link" href="#booking">Wednesday | 9pm (T21)</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#booking">Thursday | 9pm (T21)</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#booking">Friday | 9pm (T21)</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#booking">Saturday | 6pm (T18)</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#booking">Sunday | 6pm (T18)</a>
-              </li>
+              <a href="#booking">
+                <button id="monANM" onclick="initializeSynop('ANM', 'mon')">Monday | 12pm (T12)</button>
+              </a>
+              <a href="#booking">
+                <button id="tueANM" onclick="initializeSynop('ANM', 'tue')">Tuesday | 12pm (T12)</button>
+              </a>
+              <a href="#booking">
+                <button id="wedANM" onclick="initializeSynop('ANM', 'wed')">Wednesday | 6pm (T18)</button>
+              </a>
+              <a href="#booking">
+                <button id="thuANM" onclick="initializeSynop('ANM', 'thu')">Thursday | 6pm (T18)</button>
+              </a>
+              <a href="#booking">
+                <button id="friANM" onclick="initializeSynop('ANM', 'fri')">Friday | 6pm (T18)</button>
+              </a>
+              <a href="#booking">
+                <button id="satANM" onclick="initializeSynop('ANM', 'sat')">Saturday | 12pm (T12)</button>
+              </a>
+              <a href="#booking">
+                <button id="sunANM" onclick="initializeSynop('ANM', 'sun')">Sunday | 12pm (T12)</button>
+              </a>
             </ul>
           </div>
           <div class="col-md-5">
@@ -329,21 +334,21 @@
             </p>
             <h5>Make a Booking:</h5>
             <ul class="nav">
-              <li class="nav-item ">
-                <a class="nav-link" href="#booking">Wednesday | 9pm (T21)</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#booking">Thursday | 9pm (T21)</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#booking">Friday | 9pm (T21)</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#booking">Saturday | 6pm (T18)</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#booking">Sunday | 6pm (T18)</a>
-              </li>
+              <a href="#booking">
+                <button id="wedAHF" onclick="initializeSynop('AHF', 'wed')">Wednesday | 12pm (T12)</button>
+              </a>
+              <a href="#booking">
+                <button id="thuAHF" onclick="initializeSynop('AHF', 'thu')">Thursday | 12pm (T12)</button>
+              </a>
+              <a href="#booking">
+                <button id="friAHF" onclick="initializeSynop('AHF', 'fri')">Friday | 12pm (T12)</button>
+              </a>
+              <a href="#booking">
+                <button id="satAHF" onclick="initializeSynop('AHF', 'sat')">Saturday | 9pm (T21)</button>
+              </a>
+              <a href="#booking">
+                <button id="sunAHF" onclick="initializeSynop('AHF', 'sun')">Sunday | 12pm (T12)</button>
+              </a>
             </ul>
           </div>
           <div class="col-md-5">
@@ -412,83 +417,130 @@
         <h2>Booking</h2>
       </div>
       <div class="container-fluid parallax2 row justify-content-center">
+        <div id="bookingPlaceholder">
+          <h3> Please select a movie and time to display booking form</h3>
+        </div>
         <div id="bookingForm" class="col-md-7">
-          <form>
-            <input type="hidden" id="movieId" name="movieId" value="">
-            <input type="hidden" id="movieDay" name="movieDay" value="">
-            <input type="hidden" id="movieHour" name="movieHour" value="">
+          <form name="myForm" action="https://titan.csit.rmit.edu.au/~e54061/wp/lunardo-formtest.php" target="_blank"
+            onsubmit="return formCheck()" method="post">
+            <input type="hidden" id="movieId" name="movie[id]" value="">
+            <input type="hidden" id="movieDay" name="movie[day]" value="">
+            <input type="hidden" id="movieHour" name="movie[hour]" value="">
 
             <span id="formHeader"></span>
 
             <div class="form-row">
-              <div class="col-md-4">
+              <div class="col-md-5">
                 <h4>Standard</h4>
                 <div style="border: solid black; padding: 10px; margin: 10px;">
                   <div class="form-inline">
                     <label class="mb-2 mr-sm-2" for="numAdultsSTA">Adult</label>
-                    <select class="form-control mb-2 mr-sm-2" id="numAdultsSTA">
-                      <option selected>Choose</option>
+                    <select class="form-control mb-2 mr-sm-2 seats" name="seats[STA]" id="STA" onchange="updateTotal()">
+                      <option value='' selected>Please select</option>
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
                     </select>
                   </div>
 
                   <div class="form-inline">
-                    <label class="mb-2 mr-sm-2 right-align-item" for="numConcSTA">Concession</label>
-                    <select class="form-control mb-2 mr-sm-2" id="numConcSTA">
-                      <option selected>Choose</option>
+                    <label class="mb-2 mr-sm-2 right-align-item" for="numConcSTP">Concession</label>
+                    <select class="form-control mb-2 mr-sm-2 seats" name="seats[STP]" id="STP" onchange="updateTotal()">
+                      <option value='' selected>Please select</option>
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
                     </select>
                   </div>
                   <div class="form-inline">
-                    <label class="mb-2 mr-sm-2" for="numChildSTA">Children</label>
-                    <select class="form-control mb-2 mr-sm-2" id="numChildSTA">
-                      <option selected>Choose</option>
+                    <label class="mb-2 mr-sm-2" for="numChildSTC">Children</label>
+                    <select class="form-control mb-2 mr-sm-2 seats" name="seats[STC]" id="STC" onchange="updateTotal()">
+                      <option value='' selected>Please select</option>
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
                     </select>
                   </div>
                 </div>
                 <h4>First Class</h4>
                 <div style="border: solid black; padding: 10px; margin: 10px;">
                   <div class="form-inline">
-                    <label class="mb-2 mr-sm-2" for="numAdultsFC">Adult</label>
-                    <select class="form-control mb-2 mr-sm-2" id="numAdultsFC">
-                      <option selected>Choose</option>
+                    <label class="mb-2 mr-sm-2" for="numAdultsFCA">Adult</label>
+                    <select class="form-control mb-2 mr-sm-2 seats" name="seats[FCA]" id="FCA" onchange="updateTotal()">
+                      <option value='' selected>Please select</option>
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
                     </select>
                   </div>
 
                   <div class="form-inline">
-                    <label class="mb-2 mr-sm-2 right-align-item" for="numConcFC">Concession</label>
-                    <select class="form-control mb-2 mr-sm-2" id="numConcFC">
-                      <option selected>Choose</option>
+                    <label class="mb-2 mr-sm-2 right-align-item" for="numConcFCP">Concession</label>
+                    <select class="form-control mb-2 mr-sm-2 seats" name="seats[FCP]" id="FCP" onchange="updateTotal()">
+                      <option value='' selected>Please select</option>
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
                     </select>
                   </div>
                   <div class="form-inline">
-                    <label class="mb-2 mr-sm-2" for="numChildFC">Children</label>
-                    <select class="form-control mb-2 mr-sm-2" id="numChildFC">
-                      <option selected>Choose</option>
+                    <label class="mb-2 mr-sm-2" for="numChildFCC">Children</label>
+                    <select class="form-control mb-2 mr-sm-2 seats" name="seats[FCC]" id="FCC" onchange="updateTotal()">
+                      <option value='' selected>Please select</option>
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
                     </select>
                   </div>
                 </div>
                 <!-- Total -->
                 <div class="form-group row">
-                  <label for="staticTotal" class="col-sm-3 col-form-label">Total &#36;</label>
-                  <div class="col-sm-2">
-                    <input type="text" readonly class="form-control-plaintext" id="staticTotal" value="">
+                  <label for="Total" class="col-sm-4 col-form-label">Total &#36;</label>
+                  <div class="col-sm-5">
+                    <input type="text" readonly name="total" class="form-control-plaintext" id="Total"
+                      placeholder="0.00">
                   </div>
                 </div>
               </div>
@@ -496,36 +548,62 @@
               <div class="col-md-6">
                 <h4>Billing</h4>
                 <div class="form-group">
-                  <label for="inputName4">Name</label>
-                  <input type="text" class="form-control" id="inputName4" placeholder="Personie Person">
+                  <label for="cusName">Name&#42;</label>
+                  <input type="text" name="cust[name]" class="form-control billing" id="cusName"
+                    placeholder="Personie Person" pattern="^[A-Za-z \-.']{1,100}$"
+                    onblur="blankCheck('cusName','nameError' )" required>
+                  <span class="error" id="nameError"></span>
                 </div>
 
                 <div class="form-group">
-                  <label for="inputPhonenum">Phone number</label>
-                  <input type="tel" class="form-control" id="inputPhonenum" placeholder="01 1234 5678">
+                  <label for="inputPhonenum">Phone number&#42;</label>
+                  <input type="tel" name="cust[mobile]" class="form-control billing" id="inputPhonenum"
+                    placeholder="04 1234 5678" pattern="^(\(04\)|04|\+614)( ?\d){8}$"
+                    onblur="blankCheck('inputPhonenum','phoneError')" required>
+                  <span class="error" id="phoneError"></span>
                 </div>
 
                 <div class="form-group">
-                  <label for="inputEmail4">Email</label>
-                  <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                  <label for="inputEmail4">Email&#42;</label>
+                  <input type="email" name="cust[email]" class="form-control billing" id="inputEmail"
+                    placeholder="Email" pattern="^[a-zA-Z0-9_\-.]+@[a-zA-Z0-9\-.]+$"
+                    onblur="blankCheck('inputEmail','emailError')" required>
+                  <span class="error" id="emailError"></span>
                 </div>
 
                 <div class="form-group">
-                  <label for="ccnum">Credit card number</label>
-                  <input type="text" class="form-control" id="inputccnum" placeholder="1111-2222-3333-4444">
+                  <label for="ccnum">Credit card number&#42;</label>
+                  <input type="text" name="cust[card]" class="form-control billing" id="inputccnum"
+                    placeholder="1111 2222 3333 4444" pattern="^[0-9]( ?\d){14,19}$"
+                    onblur="blankCheck('inputccnum','ccError')" required>
+                  <span class="error" id="ccError"></span>
                 </div>
                 <div class="form-group form-inline">
                   <label class="mb-2 mr-sm-2" for="inputExpdate">Expiry:</label>
-                  <select class="form-control mb-2 mr-sm-2 ">
-                    <option>MM</option>
+                  <select type="month" name="cust[expMonth]" class="form-control mb-2 mr-sm-2" id="expMonth" required>
+                    <option value="0">MM</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">4</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
                   </select>
-                  <select class="form-control mb-2 mr-sm-2">
-                    <option>YYYY</option>
+                  <select type="year" name="cust[expYear]" class="form-control mb-2 mr-sm-2" id="expYear" required>
+                    <option value="2000">YYYY</option>
                   </select>
+                  <span class="error" id="expError"></span>
                 </div>
               </div>
             </div>
-            <button type="submit" class="btn btn-primary">Book</button>
+            <button type="submit" name="book" class="btn btn-primary" value='book'>Book</button>
+
           </form>
 
 

@@ -36,11 +36,9 @@
       <h4 id="titleACT">Anvenger</h4>
       <button id="wedACT" onclick="initializeSynop('ACT', 'wed')">Wednesday | 12pm (T12)</button>
       <button id="thuACT" onclick="initializeSynop('ACT', 'thu')">Thursday | 9pm (T21)</button>
-
-
     </div>
 
-    <div class="container">
+    <div class="container" id= 'booking' style="display:none">
       <form name="myForm" action="https://titan.csit.rmit.edu.au/~e54061/wp/lunardo-formtest.php" target="_blank"
         onsubmit="return formCheck()" method="post">
         <input type="hidden" id="movieId" name="movie[id]" value="">
@@ -55,8 +53,8 @@
             <div style="border: solid black; padding: 10px; margin: 10px;">
               <div class="form-inline">
                 <label class="mb-2 mr-sm-2" for="numAdultsSTA">Adult</label>
-                <select class="form-control mb-2 mr-sm-2 seats" name="seats[STA]" id="numAdultsSTA">
-                  <option value="0"selected>Choose</option>
+                <select class="form-control mb-2 mr-sm-2 seats" name="seats[STA]" id="STA" onchange="updateTotal()">
+                  <option value=''selected>Choose</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -64,18 +62,18 @@
               </div>
 
               <div class="form-inline">
-                <label class="mb-2 mr-sm-2 right-align-item" for="numConcSTA">Concession</label>
-                <select class="form-control mb-2 mr-sm-2 seats" name="seats[STP]" id="numConcSTA">
-                  <option value="0" selected>Choose</option>
+                <label class="mb-2 mr-sm-2 right-align-item" for="numConcSTP">Concession</label>
+                <select class="form-control mb-2 mr-sm-2 seats" name="seats[STP]" id="STP" onchange="updateTotal()">
+                  <option value="" selected>Choose</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
                 </select>
               </div>
               <div class="form-inline">
-                <label class="mb-2 mr-sm-2" for="numChildSTA">Children</label>
-                <select class="form-control mb-2 mr-sm-2 seats" name="seats[STC]" id="numChildSTA">
-                  <option value="0" selected>Choose</option>
+                <label class="mb-2 mr-sm-2" for="numChildSTC">Children</label>
+                <select class="form-control mb-2 mr-sm-2 seats" name="seats[STC]" id="STC" onchange="updateTotal()">
+                  <option value="" selected>Choose</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -85,9 +83,9 @@
             <h4>First Class</h4>
             <div style="border: solid black; padding: 10px; margin: 10px;">
               <div class="form-inline">
-                <label class="mb-2 mr-sm-2" for="numAdultsFC">Adult</label>
-                <select class="form-control mb-2 mr-sm-2 seats" name="seats[FCA]" id="numAdultsFC">
-                  <option value="0" selected>Choose</option>
+                <label class="mb-2 mr-sm-2" for="numAdultsFCA">Adult</label>
+                <select class="form-control mb-2 mr-sm-2 seats" name="seats[FCA]" id="FCA" onchange="updateTotal()">
+                  <option value="" selected>Choose</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -95,18 +93,18 @@
               </div>
 
               <div class="form-inline">
-                <label class="mb-2 mr-sm-2 right-align-item" for="numConcFC">Concession</label>
-                <select class="form-control mb-2 mr-sm-2 seats" name="seats[FCP] id="numConcFC">
-                  <option value="0" selected>Choose</option>
+                <label class="mb-2 mr-sm-2 right-align-item" for="numConcFCP">Concession</label>
+                <select class="form-control mb-2 mr-sm-2 seats" name="seats[FCP]" id="FCP" onchange="updateTotal()">
+                  <option value="" selected>Choose</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
                 </select>
               </div>
               <div class="form-inline">
-                <label class="mb-2 mr-sm-2" for="numChildFC">Children</label>
-                <select class="form-control mb-2 mr-sm-2 seats" name="seats[FCC] id="numChildFC">
-                  <option value="0" selected>Choose</option>
+                <label class="mb-2 mr-sm-2" for="numChildFCC">Children</label>
+                <select class="form-control mb-2 mr-sm-2 seats" name="seats[FCC]" id="FCC" onchange="updateTotal()">
+                  <option value="" selected>Choose</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -117,7 +115,7 @@
             <div class="form-group row">
               <label for="Total" class="col-sm-4 col-form-label">Total &#36;</label>
               <div class="col-sm-5">
-                <input type="text" readonly name="total" class="form-control-plaintext" id="Total" placeholder="0.00">
+                <input type="text" readonly name="total" class="form-control-plaintext" id="Total" placeholder="0.00" required>
               </div>
             </div>
           </div>
@@ -175,7 +173,7 @@
             </div>
           </div>
         </div>
-        <button type="submit" name="order" class="btn btn-primary">Order</button>
+        <button type="submit" name="book" class="btn btn-primary"value='book'>Book</button>
 
       </form>
     </div>
