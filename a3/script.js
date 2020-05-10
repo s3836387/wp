@@ -7,7 +7,7 @@ window.addEventListener("scroll", event => {
 
         let section = document.querySelector(link.hash);
 
-        if (section.offsetTop - 75 <= viewTop &&
+        if (section.offsetTop - 100 <= viewTop &&
             section.offsetTop + section.offsetHeight - 100 > viewTop) {
             link.classList.add('active');
         } else {
