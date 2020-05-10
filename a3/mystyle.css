@@ -295,6 +295,11 @@ a>button{
 #booking{
     padding: 0px;
 }
+#formHeader h3{
+    text-align: center;
+    padding: 10px;
+    font-weight: 600;
+}
 #bookingForm{
     border: 2px solid #160101;
     background-color: #fcefc8;

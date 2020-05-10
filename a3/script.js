@@ -82,7 +82,7 @@ function updateTotal() {
   }
   if (total != temp) {
     total = temp.toFixed(2);
-    document.getElementById('Total').value = total;
+    document.getElementById('Total').value = '$'+total;
   }
 }
 function initializeSynop(id, day) {
