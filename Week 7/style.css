@@ -21,9 +21,7 @@ nav ul{
       display:table;
       margin:0 auto;
 }
-li{
-        display:table-cell;
-}
+
 a{
           padding:10px 20px;
           display:block;

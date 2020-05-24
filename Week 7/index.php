@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php 
+require 'tools.php';
+?>
 <html lang="en">
 
 <head>
@@ -17,7 +20,100 @@
   <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="style.css">
+  <?php
+  
+  $errorCount = 0;
+  $emptySeat = 0;
 
+  // -----Form processing-----
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $customer = $_POST["cust"];
+    $movie = $_POST['movie'];
+    $seatings = $_POST['seats'];
+    $total =  calToltal($seatings, $movie['day'], $movie['hour']);
+
+    //-----validate if all seat is empty-----
+    if ($total == 0) {
+      $totalErr = "You must choose at lease 1 seat.";
+      $errorCount++;
+    }
+
+    // ----- Name validation -----
+    if (empty($customer["name"])) {
+      $nameErr = "Name is required";
+      $errorCount++;
+    } else {
+      $name = test_input($customer["name"]);
+      if (!preg_match("/^[A-Za-z \-.']{1,100}$/", $name)) {
+        $nameErr = "'" . $name . "' " . "Only letters and whitespace are allowed.";
+        $errorCount++;
+      }
+    }
+
+    // ----- Phone validation -----
+    if (empty($customer["mobile"])) {
+      $mobileErr = "Your phone number is required";
+      $errorCount++;
+    } else {
+      $mobile = test_input($customer["mobile"]);
+      if (!preg_match("/^(\(04\)|04|\+614)( ?\d){8}$/", $mobile)) {
+        $mobileErr = "'" . $mobile . "' " . "Only Australia number are allowed.";
+        $errorCount++;
+      }
+    }
+    // ----- Validate email -----
+    if (!isset($customer["email"])) {
+      $emailErr = "Email is required";
+      $errorCount++;
+    } else {
+      $email = test_input($customer["email"]);
+      if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $emailErr = "Invalid email format";
+        $errorCount++;
+      }
+    }
+    //----- Validate credit card -----
+    if (empty($customer["card"])) {
+      $cardErr = "Your credit card number is required";
+      $errorCount++;
+    } else {
+      $card = test_input($customer["card"]);
+      if (!preg_match("/^[0-9]( ?\d){14,19}$/", $card)) {
+        $cardErr = "'" . $card . "' " . "Only valid card number allowed.";
+        $errorCount++;
+      }
+    }
+
+    //----- Validate credit card exp date -----
+    if (empty($customer["expMonth"])) {
+      $expErr = "Your credit card expiry Month is required";
+      $errorCount++;
+    } else if (empty($customer['expYear'])) {
+      $expErr = "Your credit card expiry Year is required";
+      $errorCount++;
+    } else {
+      $expMonth = test_input($customer["expMonth"]);
+      $expYear = test_input($customer["expYear"]);
+      $expDate = date_create($expYear . '-' . $expMonth . '-01');
+      $currentDate = date_create();
+      $diff = dateDifference($currentDate, $expDate, '%R%a');
+      if ($diff <= 28) {
+        $expErr = "Your credit card expired in $diff days. Please enter card that don't expire in a month";
+        $errorCount++;
+      }
+    }
+
+    if ($errorCount == 0) {
+      $_SESSION['cart'] = $_POST;
+      //header("Location: receipt.php");
+    }else{
+      $formErr= "One of your input is wrong please try again.";
+    }
+  }
+  if (isset($_POST['session-reset'])) {
+    unset($_SESSION["email"]);
+  }
+  ?>
 </head>
 
 <body>
@@ -37,10 +133,9 @@
       <button id="wedACT" onclick="initializeSynop('ACT', 'wed')">Wednesday | 12pm (T12)</button>
       <button id="thuACT" onclick="initializeSynop('ACT', 'thu')">Thursday | 9pm (T21)</button>
     </div>
-
-    <div class="container" id= 'booking' style="display:none">
-      <form name="myForm" action="https://titan.csit.rmit.edu.au/~e54061/wp/lunardo-formtest.php" target="_blank"
-        onsubmit="return formCheck()" method="post">
+    <span class="error"> <?php echo $formErr; ?></span>
+    <div class="container" id='booking' style="display:none">
+      <form name="myForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" target="_self" method="post">
         <input type="hidden" id="movieId" name="movie[id]" value="">
         <input type="hidden" id="movieDay" name="movie[day]" value="">
         <input type="hidden" id="movieHour" name="movie[hour]" value="">
@@ -54,7 +149,7 @@
               <div class="form-inline">
                 <label class="mb-2 mr-sm-2" for="numAdultsSTA">Adult</label>
                 <select class="form-control mb-2 mr-sm-2 seats" name="seats[STA]" id="STA" onchange="updateTotal()">
-                  <option value=''selected>Choose</option>
+                  <option value='' selected>Choose</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -117,6 +212,7 @@
               <div class="col-sm-5">
                 <input type="text" readonly name="total" class="form-control-plaintext" id="Total" placeholder="0.00" required>
               </div>
+              <span class="error"> <?php echo $totalErr; ?></span>
             </div>
           </div>
 
@@ -124,34 +220,30 @@
             <h4>Billing</h4>
             <div class="form-group">
               <label for="cusName">Name&#42;</label>
-              <input type="text" name="cust[name]" class="form-control billing" id="cusName" placeholder="Personie Person"
-                pattern="^[A-Za-z \-.']{1,100}$" onblur="blankCheck('cusName','nameError' )" required>
-              <span class="error" id="nameError"></span>
+              <input type="text" name="cust[name]" class="form-control billing" id="cusName" placeholder="Personie Person">
+              <span class="error"> <?php echo $nameErr; ?></span>
             </div>
 
             <div class="form-group">
               <label for="inputPhonenum">Phone number&#42;</label>
-              <input type="tel" name="cust[mobile]" class="form-control billing" id="inputPhonenum" placeholder="04 1234 5678"
-                pattern="^(\(04\)|04|\+614)( ?\d){8}$" onblur="blankCheck('inputPhonenum','phoneError')" required>
-              <span class="error" id="phoneError"></span>
+              <input type="tel" name="cust[mobile]" class="form-control billing" id="inputPhonenum" placeholder="04 1234 5678">
+              <span class="error"> <?php echo $mobileErr; ?></span>
             </div>
 
             <div class="form-group">
               <label for="inputEmail4">Email&#42;</label>
-              <input type="email" name="cust[email]" class="form-control billing" id="inputEmail" placeholder="Email"
-                pattern="^[a-zA-Z0-9_\-.]+@[a-zA-Z0-9\-.]+$" onblur="blankCheck('inputEmail','emailError')" required>
-              <span class="error" id="emailError"></span>
+              <input type="email" name="cust[email]" class="form-control billing" id="inputEmail" placeholder="Email">
+              <span class="error"> <?php echo $emailErr; ?></span>
             </div>
 
             <div class="form-group">
               <label for="ccnum">Credit card number&#42;</label>
-              <input type="text" name="cust[card]" class="form-control billing" id="inputccnum" placeholder="1111 2222 3333 4444"
-                pattern="^[0-9]( ?\d){14,19}$" onblur="blankCheck('inputccnum','ccError')" required>
-              <span class="error" id="ccError"></span>
+              <input type="text" name="cust[card]" class="form-control billing" id="inputccnum" placeholder="1111 2222 3333 4444">
+              <span class="error"> <?php echo $cardErr; ?></span>
             </div>
             <div class="form-group form-inline">
               <label class="mb-2 mr-sm-2" for="inputExpdate">Expiry:</label>
-              <select type="month" name="cust[expMonth]" class="form-control mb-2 mr-sm-2" id="expMonth" required>
+              <select type="month" name="cust[expMonth]" class="form-control mb-2 mr-sm-2" id="expMonth">
                 <option value="0">MM</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -166,14 +258,14 @@
                 <option value="11">11</option>
                 <option value="12">12</option>
               </select>
-              <select type="year" name="cust[expYear]" class="form-control mb-2 mr-sm-2" id="expYear" required>
+              <select type="year" name="cust[expYear]" class="form-control mb-2 mr-sm-2" id="expYear">
                 <option value="2000">YYYY</option>
               </select>
-              <span class="error" id="expError"></span>
+              <span class="error"><?php echo $expErr; ?></span>
             </div>
           </div>
         </div>
-        <button type="submit" name="book" class="btn btn-primary"value='book'>Book</button>
+        <button type="submit" name="book" class="btn btn-primary" value='book'>Book</button>
 
       </form>
     </div>
@@ -190,5 +282,15 @@
   <script src="tool.js"></script>
 </body>
 <footer>
-  
+  <?php
+  echo "<h4>POST</h4>";
+  preShow($_POST);
+  echo "<h4>GET</h4>";
+  preShow($_GET);
+  echo "<h4>SESSION</h4>";
+  preShow($_SESSION);
+  ?>
+  <h4>POST code</h4>
+  <?php printMyCode();
+  ?>
 </footer>
