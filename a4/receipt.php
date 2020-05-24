@@ -213,7 +213,7 @@
             </div>
           </div>
         </div>
-        <button type='button' class='btn btn-primary float-right' onclick="printInvoice('invoice')">Print</button>
+        <button type='button' class='btn btn-primary float-right' onclick="printInvoice('ticket')">Print</button>
       </div>
     </section>
 
