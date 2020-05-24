@@ -112,7 +112,8 @@
       $_SESSION['cart'] = $_POST;
       header("Location: receipt.php");
     } else {
-      $formErr = ' There is error in your form. Please try again.';
+      $formErr = ' <h4 class="error" style="background: #f4a24f; color: red; padding: 10px; align-content: center;font-weight: 800;">
+      There is error in your form. Please try again. </h4>';
     }
   }
   ?>
@@ -511,8 +512,7 @@
       <div class="container-fluid parallax2 row justify-content-center">
         <div id="bookingPlaceholder">
           <span>
-            <h4 class="error" style="background: #f4a24f; color: red; padding: 10px; align-content: center;font-weight: 800;">              <?php echo $formErr; ?>
-            </h4>
+            <?php echo $formErr; ?>
           </span>
           <h3> Please select a movie and time to display booking form</h3>
         </div>
