@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php 
+<?php
 require 'tools.php';
 ?>
 <html lang="en">
@@ -21,7 +21,7 @@ require 'tools.php';
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="style.css">
   <?php
-  
+
   $errorCount = 0;
   $emptySeat = 0;
 
@@ -31,7 +31,7 @@ require 'tools.php';
     $movie = $_POST['movie'];
     $seatings = $_POST['seats'];
     $total =  calToltal($seatings, $movie['day'], $movie['hour']);
-
+    $_POST['total'] = $total;
     //-----validate if all seat is empty-----
     if ($total == 0) {
       $totalErr = "You must choose at lease 1 seat.";
@@ -105,13 +105,11 @@ require 'tools.php';
 
     if ($errorCount == 0) {
       $_SESSION['cart'] = $_POST;
-      //header("Location: receipt.php");
-    }else{
-      $formErr= "One of your input is wrong please try again.";
+      header("Location: receipt.php");
     }
   }
   if (isset($_POST['session-reset'])) {
-    unset($_SESSION["email"]);
+    unset($_SESSION["cart"]);
   }
   ?>
 </head>
@@ -149,7 +147,7 @@ require 'tools.php';
               <div class="form-inline">
                 <label class="mb-2 mr-sm-2" for="numAdultsSTA">Adult</label>
                 <select class="form-control mb-2 mr-sm-2 seats" name="seats[STA]" id="STA" onchange="updateTotal()">
-                  <option value='' selected>Choose</option>
+                  <option value='0' selected>Choose</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -159,7 +157,7 @@ require 'tools.php';
               <div class="form-inline">
                 <label class="mb-2 mr-sm-2 right-align-item" for="numConcSTP">Concession</label>
                 <select class="form-control mb-2 mr-sm-2 seats" name="seats[STP]" id="STP" onchange="updateTotal()">
-                  <option value="" selected>Choose</option>
+                  <option value="0" selected>Choose</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -168,7 +166,7 @@ require 'tools.php';
               <div class="form-inline">
                 <label class="mb-2 mr-sm-2" for="numChildSTC">Children</label>
                 <select class="form-control mb-2 mr-sm-2 seats" name="seats[STC]" id="STC" onchange="updateTotal()">
-                  <option value="" selected>Choose</option>
+                  <option value="0" selected>Choose</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -180,7 +178,7 @@ require 'tools.php';
               <div class="form-inline">
                 <label class="mb-2 mr-sm-2" for="numAdultsFCA">Adult</label>
                 <select class="form-control mb-2 mr-sm-2 seats" name="seats[FCA]" id="FCA" onchange="updateTotal()">
-                  <option value="" selected>Choose</option>
+                  <option value="0" selected>Choose</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -190,7 +188,7 @@ require 'tools.php';
               <div class="form-inline">
                 <label class="mb-2 mr-sm-2 right-align-item" for="numConcFCP">Concession</label>
                 <select class="form-control mb-2 mr-sm-2 seats" name="seats[FCP]" id="FCP" onchange="updateTotal()">
-                  <option value="" selected>Choose</option>
+                  <option value="0" selected>Choose</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -199,7 +197,7 @@ require 'tools.php';
               <div class="form-inline">
                 <label class="mb-2 mr-sm-2" for="numChildFCC">Children</label>
                 <select class="form-control mb-2 mr-sm-2 seats" name="seats[FCC]" id="FCC" onchange="updateTotal()">
-                  <option value="" selected>Choose</option>
+                  <option value="0" selected>Choose</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>

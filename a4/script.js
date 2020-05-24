@@ -1,34 +1,37 @@
+/*nav bar active links */
 window.addEventListener("scroll", event => {
-  let navLinks = document.querySelectorAll('nav ul li a');
-  let fromTop = window.scrollY;
-  navLinks.forEach(link => {
-    let section = document.querySelector(link.hash);
-    if (section.offsetTop <= fromTop &&
-      section.offsetTop + section.offsetHeight > fromTop) {
-      link.classList.add('active');
-    } else {
-      link.classList.remove('active');
-    }
-  });
+    let navLinks = document.querySelectorAll('nav a');
+    let viewTop = window.scrollY;
 
+    navLinks.forEach(link => {
+
+        let section = document.querySelector(link.hash);
+
+        if (section.offsetTop - 100 <= viewTop &&
+            section.offsetTop + section.offsetHeight - 100 > viewTop) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
 });
-/* Get element id */
-function getid(x) {
-  return document.getElementById(x);
-}
-/* Show/hide synoposis area */
-var synoposis = document.getElementsByClassName("synop");
-function myFunction(movieid) {
+
+/* More detail synoposis*/
+
+
+function moreDetailToggle(movieid) {
   let x = document.getElementById(movieid);
-  for (i = 0; i < synoposis.length; i++) {
-    let y = synoposis[i];
-    if (y.id != movieid) {
+  let synoposis = document.getElementsByClassName("synopsis");
+  for (i = 0 ; i < synoposis.length; i++){
+    let y= synoposis[i];
+    if (y.id != movieid){
       if (y.style.display === "block") {
         y.style.display = "none";
       }
     }
   }
   if (x.style.display === "none") {
+    
     x.style.display = "block";
   } else {
     x.style.display = "none";
@@ -36,17 +39,18 @@ function myFunction(movieid) {
 }
 
 /* Form functions */
+/* ------- Global variable ------ */
 var weekdays = ['MON', 'TUE', 'WED', 'THU', 'FRI'];
 var discountdays = ['MON', 'TUE', 'WED'];
-var seatcode = ['STA', 'STP', 'STC', 'FCA', 'FCP', 'FCC']; /* Use indexof to calculate price total */
+var seatcode = ['STA', 'STP', 'STC', 'FCA', 'FCP', 'FCC'];
 var movie_id = document.getElementById("movieId");
 var movie_hour = document.getElementById("movieHour");
 var movie_day = document.getElementById("movieDay");
 var funcYear = true;
 var total = 0.00;
-
 var pricerate;
 
+/* ------- Intialize booking area ------ */
 function getYear() {
   if (funcYear) {
     let year = document.getElementById("expYear");
@@ -78,7 +82,7 @@ function updateTotal() {
   }
   if (total != temp) {
     total = temp.toFixed(2);
-    document.getElementById('Total').value = total;
+    document.getElementById('Total').value = '$'+total;
   }
 }
 function initializeSynop(id, day) {
@@ -94,15 +98,17 @@ function initializeSynop(id, day) {
   }
   getRate();
   updateTotal();
-  document.getElementById('booking').style.display = "block";
+  document.getElementById('bookingPlaceholder').style.display = "none";
+  document.getElementById('bookingForm').style.display = "block";
 }
 
+/* ------- Check form functions ------ */
 /* Clear error*/
 function clearError(input, alert) {
   alert.innerHTML = '';
   input.classList.remove('inputError');
 }
-/* Check is blank */
+/* check blank */
 function blankCheck(inputid, errorid) {
   let name = document.getElementById(inputid);
   let errorAlert = document.getElementById(errorid);
@@ -115,59 +121,6 @@ function blankCheck(inputid, errorid) {
     return true
   }
 }
-/* Check name */
-function nameCheck() {
-  let name = document.getElementById('inputName');
-  let errorAlert = document.getElementById('nameError');
-  if (!name.checkValidity()) {
-    errorAlert.innerHTML = "&#42;Please don't use special character. We only accept latin character.";
-    name.classList.add('inputError');
-    return false;
-  } else {
-    clearError(name, errorAlert);
-    return true;
-  }
-}
-/* Check Phone number */
-function phoneCheck() {
-  let phone = document.getElementById("inputPhonenum");
-  let errorAlert = document.getElementById('phoneError');
-  if (!phone.checkValidity()) {
-    errorAlert.innerHTML = "&#42;This must be Australia number. Ex: 04 1234 5678";
-    phone.style.backgroundColor = '#fee';
-    return false;
-  } else {
-    clearError(phone, errorAlert);
-    return true;
-  }
-}
-/* Check Email */
-function emailCheck() {
-  let email = document.getElementById("inputEmail");
-  let errorAlert = document.getElementById('emailError');
-  if (!email.checkValidity()) {
-    errorAlert.innerHTML = "&#42;Please type in a valid email. Ex: exmaple@gmail.com";
-    email.style.backgroundColor = '#fee';
-    return false;
-  } else {
-    clearError(email, errorAlert);
-    return true;
-  }
-}
-/* Check credit card */
-function ccCheck() {
-  let creditcard = document.getElementById("inputccnum");
-  let errorAlert = document.getElementById('ccError');
-  if (!creditcard.checkValidity()) {
-    errorAlert.innerHTML = "&#42;You must fill in your credit card number.";
-    creditcard.style.backgroundColor = '#fee';
-    return false;
-  } else {
-    clearError(creditcard, errorAlert);
-    return true;
-  }
-}
-
 /* Check expCheck */
 function expCheck() {
   document.getElementById('expError').innerHTML = '';
@@ -187,7 +140,7 @@ function expCheck() {
   }
 
 }
-
+/* Main form check */
 function formCheck() {
   let errorCount = 0;
   if (total === 0)errorCount++;

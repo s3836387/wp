@@ -83,17 +83,20 @@ function test_input(&$data)
   return $data;
 }
 
-// Validate total value
-function calToltal ($seatarr, $movieday, $movietime){
+// ----- Get day price -----
+function getPrice($movieday, $movietime){
   global $daysDate, $pricesObject;
-  $total =0;
   if((array_search($movieday, $daysDate) <3 )|| 
     ((array_search($movieday, $daysDate) <5) && ($movietime == 'T12'))){
-    $price = $pricesObject['discount'];
+    return $pricesObject['discount'];
   }else{
-    $price = $pricesObject['full'];
+    return $pricesObject['full'];
   }
-
+}
+// Validate total value
+function calToltal ($seatarr, $movieday, $movietime){
+  $total =0;
+  $price = getPrice($movieday, $movietime);
   foreach ($seatarr as $seat => $seatQuan){
     $total += $seatQuan * $price[$seat];
   }
@@ -105,5 +108,16 @@ function dateDifference($date_1 , $date_2 , $differenceFormat = '%a' )
 {
     $interval = date_diff($date_1, $date_2);
     return $interval->format($differenceFormat);
+}
+
+//Get seats
+function printRow($seatarr,$movieday, $movietime){
+  $price = getPrice($movieday, $movietime);
+  foreach ($seatarr as $seat => $seatQuan){
+    if (!empty($seatQuan)){
+        
+      
+    }
+}
 }
 ?>

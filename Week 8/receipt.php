@@ -18,6 +18,8 @@
     $cusMobile= $_SESSION["cart"]['cust']['mobile'];
     $cusEmail= $_SESSION["cart"]['cust']['email'];
     $total = $_SESSION["cart"]['total'];
+    $seats = $_SESSION["cart"]['seats'];
+    $movie = $_SESSION["cart"]['movie'];
     $row = array_merge(
         [$now],
         [$cartid],
@@ -25,20 +27,18 @@
         [$cusEmail],
         [$cusMobile],
         $_SESSION ["cart"]['movie'],
-        $_SESSION["cart"]['seats'],
+        $seats,
         [$total]
     );
-    $myfile = fopen("bookings.csv","a");
-    fputcsv($myfile, $row);
-    fclose($myfile);
-    print_r($row);
+    //$myfile = fopen("bookings.csv","a");
+    //fputcsv($myfile, $row);
+    //fclose($myfile);
+    printRow($seats,$movie['day'],$movie['hour']);
 
     ?>
 </head>
 
 <body>
-    /* link: localhost:8888/wp/Week%208/index.php */
-    
 
 
 

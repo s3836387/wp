@@ -1,0 +1,321 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat&family=Montserrat:wght@800&display=swap');
+/*#f7efd8 #f4a24f #c63434 #580f0c #010000*/
+
+html{
+    scroll-behavior: smooth;
+}
+body, html {
+    height: 100%;
+    scroll-padding-top: 65px;
+    
+  }
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+:target::before{
+    content: "";
+    display: block;
+    height: 10px;
+    margin: -10px 0 0 ;
+  }
+ /* Navigation bar*/
+#navbar {
+    overflow: hidden;
+    background-color: #160101;
+}
+footer{
+    background-color: #160101;
+    color: #f7efd8;
+}
+a:link, a:visited {
+    color:#f7efd8 ;
+    padding: 5px;
+}
+a:hover, a:active{
+    text-decoration: none;
+    background-color:#c63434 ;
+    color:#f7efd8 ;
+    padding: 5px;
+
+}
+.active {
+    text-decoration: none;
+    background-color:#c63434 ;
+    color:#f7efd8 ;
+    padding: 5px;
+}
+#navbar a{
+    padding: 10px;
+    offset-anchor: 10px;
+}
+#synopsis a:link, a:visited{
+    background-color: #f4a24f;
+    margin: 10px;
+}
+#synopsis a:hover, a:active{
+    background-color:#c63434 ;
+    color:#f7efd8 ;
+    padding: 5px;
+}
+
+/* Logo */
+#logo{
+    font-family: 'Bungee Inline', cursive;
+    font-size: 60px;
+    background-color:#160101;
+    color: #c63434;
+    text-align: center;
+    text-shadow: 1px 1px 2px black, 0 0 25px #c63434, 0 0 5px #580f0c;
+}
+
+#lobster{
+  font-family: 'Lobster', cursive;
+  font-size: 40px;
+}
+.float-box{     
+    padding: 20px 30px;
+    width: 500px;
+    height: 400px;
+    color: #f7efd8;
+    background-color: rgba(37, 3, 1, 0.781);
+    border: 2px solid #010000 ;
+    text-align: center;
+    z-index: -1;
+    box-shadow: 10px 10px 5px black;
+}
+#welcome h5{
+    color:#c63434 ;
+    font-size: 50px;
+    text-shadow: 1px 1px 2px rgb(0, 0, 0), 0 0 25px #df3b3b, 0 0 5px #830c08;
+}
+
+.sectionHeader{
+  background-color: #1d0000;
+  padding: 10px 0px;
+  border:6px dotted #f4a24f ;
+  box-shadow: 1px 1px 2px #f4a24f, 0 0 25px #f7efd8, 0 0 5px #7e5226;
+
+}
+.sectionHeader h2{
+color: #fd3e3e;
+  font-weight: 800;
+  font-size:40px;
+  padding: 0px 0px;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgb(0, 0, 0), 0 0 25px #f80000, 0 0 5px #830c08;
+}
+/*  Parallax pict*/
+.parallax1 {
+    /* The image used */
+    /*credit photo: https://www.pexels.com/@nathan-engel-50858*/
+    background-image: url("Cinema.jpg");
+  
+    /* Set a specific height */
+    height: 600px;
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .parallax2 {
+    /* The image used */
+    background-image: url("brown-brick-wall-207142.jpg");
+  
+    /* Set a specific height */
+    height: 100%;
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    padding-top: 10px; 
+    padding-bottom: 15px;
+  }
+  /*  Table  */
+  #tprice{
+    table-layout: fixed;
+    width: 100%;
+    background-color:#dfd0a9 ;
+    margin-bottom: 0px;
+}
+
+/* What's new*/
+#new {
+    display: block;
+    text-align: center;
+    background-color: #160101;
+    padding: 10px;
+    border: 6px dotted #f4a24f;
+    box-shadow: 1px 1px 2px black, 0 0 25px #f7efd8, 0 0 5px #f4a24f;
+}
+#new span{
+    color: #f7efd8;
+    
+}
+#new h4{
+    font-family: 'Lobster', cursive;
+    font-size: 45px;
+    color: #c63434;
+    text-shadow: 1px 1px 2px black, 0 0 25px #c63434, 0 0 5px #580f0c;
+    
+}
+/*Seating*/
+#seating {
+    background-image: url('seats.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+    }
+#seating-content h5{
+    font-family:'Lobster', cursive;
+    font-size: 40px;
+    color: #c63434;
+    position: relative;
+    top: 90px;
+    left: 5%;
+    display: inline;
+    border: 4px dotted;
+    border-color: #f4a24f;
+    padding: 10px;
+    text-shadow: 1px 1px 2px black, 0 0 25px #c63434, 0 0 5px #580f0c;
+    box-shadow: 1px 1px 2px #f4a24f, 0 0 25px #f7efd8, 0 0 5px #f4a24f;
+}
+#seating-content p{
+    color: #f7efd8;
+    height: 150px;
+    width: 25%;
+    text-align: center;
+    position: relative;
+    top: 160px;
+    left: 10%;
+}
+
+/*Dolby system*/
+#Dolby-system {
+    background-image: url('Dolby.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+    }
+#Dolby-content h5{
+    font-family:'Lobster', cursive;
+    font-size: 40px;
+    color: #c63434;
+    position: relative;
+    top: 90px;
+    left: 60%;
+    right: 13%;
+    display: inline;
+    border: 4px dotted;
+    border-color: #f4a24f;
+    padding: 10px;
+    text-shadow: 1px 1px 2px black, 0 0 25px #c63434, 0 0 5px #580f0c;
+    box-shadow: 1px 1px 2px #f4a24f, 0 0 25px #f7efd8, 0 0 5px #f4a24f;
+}
+#Dolby-content p{
+    color: #f7efd8;
+    height: 150px;
+    width: 50%;
+    text-align: center;
+    position: relative;
+    top: 140px;
+    left: 50%;
+}
+
+/*list in card*/
+#nowShowing,#prices{
+    padding: 0px;
+}
+#nowShowing-content{
+    padding-top: 10px;
+    /* The image used */
+    background-image: url("brown-brick-wall-207142.jpg");
+  
+    /* Set a specific height */
+    height: 100%;
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.card{
+    background-color: rgba(36, 1, 1, 0.7);
+    border: 3px dotted #f4a24f;
+    box-shadow: 10px 10px 5px black;
+}
+.card-text{
+    text-align: center;
+    list-style-type: none;
+    padding: 5px;
+    color: #f7efd8;
+}
+
+.card-title{
+    text-align: center;
+    color: #c63434;
+    font-weight: 800;
+    text-shadow: 1px 1px 2px black, 0 0 25px #c63434, 0 0 5px #580f0c;
+}
+div.synopsis{
+    display: none;
+    background-color: #1a0000;
+    padding: 20px;
+}
+.synopsis-content{
+    
+    background-color: #faebc0;
+    padding: 20px;
+    border: 2px solid #f4a24f;
+}
+.synopsis-content h3{
+    text-align: center;
+    color: #c63434;
+    font-weight: 800;
+    font-size: 40px;
+    text-shadow: 1px 1px 2px black, 0 0 25px #c63434, 0 0 5px #580f0c;
+}
+.synopsis-content h4{
+    text-align: center;
+}
+a>button{
+    background: #f4a24f;
+    border: #f4a24f;
+    padding: 5px;
+}
+#booking{
+    padding: 0px;
+}
+#formHeader h3{
+    text-align: center;
+    padding: 10px;
+    font-weight: 600;
+}
+#bookingForm{
+    border: 2px solid #160101;
+    background-color: #fcefc8;
+    padding: 10px 10px;
+    display: none;
+}
+#bookingPlaceholder h3{
+    background-color:#f4a24f ;
+    color:#c63434 ;
+    padding: 10px;
+    font-weight: 800;
+}
+.inputError {
+    border:2px red solid;
+    background-color:#fee;
+  }
+  .error {
+    color: red;
+  }
