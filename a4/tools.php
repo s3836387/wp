@@ -3,18 +3,10 @@ session_start();
 
 // Put your PHP functions and modules here
 $moviesObject = [
-  'ACT' => [
-    'title' => 'Avengers: Endgame',
-    'rating' => 'PG-13',
-    'description' => '<p>With the help of remaining allies ... ',
-    'screenings' => [
-      'WED' => 'T21',
-      'THU' => 'T21',
-      'FRI' => 'T21',
-      'SAT' => 'T18',
-      'SUN' => 'T18'
-    ]
-  ]
+  'ACT' => 1,
+  'RMC' => 2,
+  'ANM' => 3,
+  'AHF' => 4,
 ];
 $pricesObject = [
   'full' => [
@@ -35,15 +27,14 @@ $pricesObject = [
   ]
 ];
 $seatDesc = [
-
   'STA' => 'Standard Adult',
   'STP' => 'Standard Concession',
   'STC' => 'Standard Child',
   'FCA' => 'First Class Adult',
   'FCP' => 'First Class Concession',
   'FCC' => 'First Class Child'
-
 ];
+
 $daysDate = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'];
 
 //prints data and shape/structure of data
@@ -128,9 +119,9 @@ function calToltal($seatarr, $movieday, $movietime)
   }
   return $total;
 }
-//Get seats
-function printRow($seatarr, $movieday, $movietime)
-{
+
+//Get seats invoice
+function printInvoiceRow($seatarr, $movieday, $movietime){
   global $seatDesc;
   $price = getPrice($movieday, $movietime);
   $rownum = 1;
@@ -150,3 +141,39 @@ function printRow($seatarr, $movieday, $movietime)
     }
   }
 }
+//Get seats invoice
+function printTicketRow($seatarr, $movieday, $movietime){
+  global $seatDesc;
+  $price = getPrice($movieday, $movietime);
+  $rownum = 1;
+  foreach ($seatarr as $seat => $seatQuan) {
+    if (!empty($seatQuan)) {
+      $unitTotal = $price[$seat] * $seatQuan;
+      echo "<tr>
+              <td class='center'>$rownum</td>
+              <td class='left strong'>$seat</td>
+              <td class='left'>$seatDesc[$seat]</td>
+              <td class='center'>$seatQuan</td>
+           </tr>";
+      $rownum++;
+    }
+  }
+}
+//Get screening 
+function getScreen($movieid)
+{
+  global $moviesObject;
+  return $moviesObject[$movieid];
+}
+
+function getMovieday($movieDate){
+  global $daysDate;
+  $day= ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday','Sunday'];
+  $index = array_search($movieDate,$daysDate);
+  return $day[$index];
+}
+function getMovieTime ($movieTime){
+$time= ['T12'=> '12 pm', 'T15'=>'3 pm', 'T18'=> '6 pm', 'T21'=>'9 pm'];
+return $time[$movieTime];
+}
+

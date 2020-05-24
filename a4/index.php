@@ -27,6 +27,11 @@
   $emptySeat = 0;
 
   // -----Form processing-----
+  if (isset($_POST['session-reset'])) {
+    foreach ($_SESSION as $something => &$whatever) {
+      unset($whatever);
+    }
+  }
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $customer = $_POST["cust"];
     $movie = $_POST['movie'];
@@ -103,17 +108,12 @@
         $errorCount++;
       }
     }
-
     if ($errorCount == 0) {
       $_SESSION['cart'] = $_POST;
-      echo 'something';
       header("Location: receipt.php");
-    }else{
-      $formErr ='<h4> There is error in your form. Please try again. </h4>';
+    } else {
+      $formErr = ' There is error in your form. Please try again.';
     }
-  }
-  if (isset($_POST['session-reset'])) {
-    unset($_SESSION["cart"]);
   }
   ?>
 
@@ -510,7 +510,10 @@
       </div>
       <div class="container-fluid parallax2 row justify-content-center">
         <div id="bookingPlaceholder">
-        <span class="error"> <?php echo $formErr; ?></span>
+          <span>
+            <h4 class="error" style="background: #f4a24f; color: red; padding: 10px; align-content: center;font-weight: 800;">              <?php echo $formErr; ?>
+            </h4>
+          </span>
           <h3> Please select a movie and time to display booking form</h3>
         </div>
         <div id="bookingForm" class="col-md-7">
@@ -642,7 +645,7 @@
                 <div class="form-group">
                   <label for="cusName">Name&#42;</label>
                   <input type="text" name="cust[name]" class="form-control billing" id="cusName" placeholder="Personie Person" pattern="^[A-Za-z \-.']{1,100}$" onblur="blankCheck('cusName','nameError' )" required>
-                  <span> class="error" id="nameError"</span>
+                  <span class="error" id="nameError"></span>
                   <span><?php echo $nameErr; ?></span>
                 </div>
 
@@ -691,7 +694,7 @@
                 </div>
               </div>
             </div>
-            <button type="submit" name="book" class="btn btn-primary" value='book'>Book</button>
+            <button type="submit" class="btn btn-primary" name='session-reset' value='Reset the session'>Book</button>
 
           </form>
 
@@ -712,19 +715,19 @@
     <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web
       Programming course at RMIT University in Melbourne, Australia.</div>
     <div><button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button></div>
-    
+
   </footer>
   <?php
-    echo "<h4>POST</h4>";
-    preShow($_POST);
-    echo "<h4>GET</h4>";
-    preShow($_GET);
-    echo "<h4>SESSION</h4>";
-    preShow($_SESSION);
-    ?>
-    <h4>POST code</h4>
-    <?php printMyCode();
-    ?>
+  echo "<h4>POST</h4>";
+  preShow($_POST);
+  echo "<h4>GET</h4>";
+  preShow($_GET);
+  echo "<h4>SESSION</h4>";
+  preShow($_SESSION);
+  ?>
+  <h4>POST code</h4>
+  <?php printMyCode();
+  ?>
 </body>
 
 </html>

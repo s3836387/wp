@@ -317,5 +317,12 @@ a>button{
     background-color:#fee;
   }
   .error {
+    color: rgb(146, 87, 87);
+  }
+  h4.error {
+    background: #f4a24f;
     color: red;
+    padding: 10px;
+    align-content: center;
+    font-weight: 800;
   }

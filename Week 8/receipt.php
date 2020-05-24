@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+    <link rel="stylesheet" href="ticket.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reciept</title>
@@ -33,14 +33,12 @@
     //$myfile = fopen("bookings.csv","a");
     //fputcsv($myfile, $row);
     //fclose($myfile);
-    printRow($seats,$movie['day'],$movie['hour']);
+    print_r($row);
 
     ?>
 </head>
 
 <body>
-
-
 
 </body>
 

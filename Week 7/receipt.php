@@ -141,14 +141,14 @@ require 'tools.php';
                     <td class="left">
                       <strong>VAT (10%)</strong>
                     </td>
-                    <td class="right">$ <?php echo $total*0.1 ?></td>
+                    <td class="right">$ <?php echo $total * 0.1 ?></td>
                   </tr>
                   <tr>
                     <td class="left">
                       <strong>Total</strong>
                     </td>
                     <td class="right">
-                      <strong>$ <?php echo $total*1.1 ?></strong>
+                      <strong>$ <?php echo $total * 1.1 ?></strong>
                     </td>
                   </tr>
                 </tbody>
@@ -161,6 +161,42 @@ require 'tools.php';
         </div>
       </div>
       <button onclick="printInvoice('invoice')">Print</button>
+    </div>
+  </section>
+  <section id='ticket'>
+    <div class="card" style="width: 30rem;">
+      <h4 class="card-title">Ticket</h4>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-sm">
+            <h5 class="card-text">Movie</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+          <div class="col-sm">
+            <h5 class="card-text">Row</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+          <div class="col-sm">
+            <h5 class="card-text">Seat</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm">
+            <h6>Price</h6>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+          <div class="col-sm">
+            <h5 class="card-text">Date</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+          <div class="col-sm">
+            <h5 class="card-text">Time</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 </body>
