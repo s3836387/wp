@@ -43,18 +43,26 @@
     $_SESSION["cart"]['seats'],
     [$total]
   );
-
+  //$myfile = fopen("bookings.csv","a");
+    //fputcsv($myfile, $row);
+    //fclose($myfile);
   ?>
+  <script>
+    function printInvoice(eid) {
+      let original = document.body.innerHTML
+      let toPrint = document.getElementById(eid).innerHTML
+      console.log(toPrint)
+      document.body.innerHTML = toPrint
+      window.print()
+      document.body.innerHTML = original
+    }
+  </script>
 </head>
 
 <body>
 
   <header>
     <div id="logo">Cinemax</div>
-  </header>
-
-  <main>
-
     <!--Navigation area-->
     <nav id="navbar" class="navbar justify-content-center sticky-top">
       <!--Links-->
@@ -63,7 +71,100 @@
       <a class="navbar-brand" href="#nowShowing">Now Showing</a>
       <a class="navbar-brand" href="#prices">Prices</a>
     </nav>
+  </header>
 
+  <main>
+
+
+    <div class="card" id='invoice'>
+      <div class="card-header">
+        Invoice
+        <strong><?php echo $now ?></strong>
+      </div>
+      <div class="card-body">
+        <!------Invoice head------->
+        <div class="row mb-4">
+          <div class="col-sm-6">
+            <h6 class="mb-3">From:</h6>
+            <div>
+              <strong>Cinemax cinema</strong>
+            </div>
+            <div>71-101 Kangaroo, Australia</div>
+            <div>Email: info@cinemax.com.php</div>
+            <div>Phone: 04 1234 3333</div>
+            <div>ABN number: 00 123 456 789 </div>
+          </div>
+
+          <div class="col-sm-6">
+            <h6 class="mb-3">To:</h6>
+            <div>
+              <strong><?php echo $cusName ?></strong>
+            </div>
+            <div>Email: <?php echo $cusEmail ?></div>
+            <div>Phone: <?php echo $cusMobile ?></div>
+          </div>
+
+
+
+        </div>
+
+        <div class="table-responsive-sm">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th class="center">#</th>
+                <th>Seat</th>
+                <th>Description</th>
+
+                <th class="right">Unit Cost</th>
+                <th class="center">Qty</th>
+                <th class="right">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+              printRow($seats, $movie['day'], $movie['hour']);
+              ?>
+            </tbody>
+          </table>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-sm-5">
+          </div>
+
+          <div class="col-lg-4 col-sm-5 ml-auto">
+            <table class="table table-clear">
+              <tbody>
+                <tr>
+                  <td class="left">
+                    <strong>Subtotal</strong>
+                  </td>
+                  <td class="right">$ <?php echo $total ?></td>
+                </tr>
+                <tr>
+                  <td class="left">
+                    <strong>VAT (10%)</strong>
+                  </td>
+                  <td class="right">$ <?php echo $total * 0.1 ?></td>
+                </tr>
+                <tr>
+                  <td class="left">
+                    <strong>Total</strong>
+                  </td>
+                  <td class="right">
+                    <strong>$ <?php echo $total * 1.1 ?></strong>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+    <button onclick="printInvoice('invoice')">Print</button>
 
     <script src="script.js"></script>
   </main>
@@ -77,19 +178,20 @@
     <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web
       Programming course at RMIT University in Melbourne, Australia.</div>
     <div><button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button></div>
-    <?php
-    echo "<h4>POST</h4>";
-    preShow($_POST);
-    echo "<h4>GET</h4>";
-    preShow($_GET);
-    echo "<h4>SESSION</h4>";
-    preShow($_SESSION);
-    ?>
-    <h4>POST code</h4>
-    <?php printMyCode();
-    ?>
+
   </footer>
 
+  <?php
+  echo "<h4>POST</h4>";
+  preShow($_POST);
+  echo "<h4>GET</h4>";
+  preShow($_GET);
+  echo "<h4>SESSION</h4>";
+  preShow($_SESSION);
+  ?>
+  <h4>POST code</h4>
+  <?php printMyCode();
+  ?>
 </body>
 
 </html>

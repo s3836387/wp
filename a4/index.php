@@ -22,7 +22,7 @@
   <script src='../wireframe.js'></script>
 
   <?php
-
+  require 'tools.php';
   $errorCount = 0;
   $emptySeat = 0;
 
@@ -106,7 +106,10 @@
 
     if ($errorCount == 0) {
       $_SESSION['cart'] = $_POST;
+      echo 'something';
       header("Location: receipt.php");
+    }else{
+      $formErr ='<h4> There is error in your form. Please try again. </h4>';
     }
   }
   if (isset($_POST['session-reset'])) {
@@ -507,7 +510,7 @@
       </div>
       <div class="container-fluid parallax2 row justify-content-center">
         <div id="bookingPlaceholder">
-          <?php echo $formErr; ?>
+        <span class="error"> <?php echo $formErr; ?></span>
           <h3> Please select a movie and time to display booking form</h3>
         </div>
         <div id="bookingForm" class="col-md-7">
@@ -639,7 +642,7 @@
                 <div class="form-group">
                   <label for="cusName">Name&#42;</label>
                   <input type="text" name="cust[name]" class="form-control billing" id="cusName" placeholder="Personie Person" pattern="^[A-Za-z \-.']{1,100}$" onblur="blankCheck('cusName','nameError' )" required>
-                  <span> class="error" id="nameError"></span>
+                  <span> class="error" id="nameError"</span>
                   <span><?php echo $nameErr; ?></span>
                 </div>
 
@@ -665,7 +668,7 @@
                 </div>
                 <div class="form-group form-inline">
                   <label class="mb-2 mr-sm-2" for="inputExpdate">Expiry:</label>
-                  <select type="month" name="cust[expiryMonth]" class="form-control mb-2 mr-sm-2" id="expMonth" required>
+                  <select type="month" name="cust[expMonth]" class="form-control mb-2 mr-sm-2" id="expMonth" required>
                     <option value="0">MM</option>
                     <option value="01">01</option>
                     <option value="2">02</option>
@@ -680,7 +683,7 @@
                     <option value="11">11</option>
                     <option value="12">12</option>
                   </select>
-                  <select type="year" name="cust[expiryYear]" class="form-control mb-2 mr-sm-2" id="expYear" required>
+                  <select type="year" name="cust[expYear]" class="form-control mb-2 mr-sm-2" id="expYear" required>
                     <option value="2000">YYYY</option>
                   </select>
                   <span class="error" id="expError"></span>
@@ -709,7 +712,9 @@
     <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web
       Programming course at RMIT University in Melbourne, Australia.</div>
     <div><button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button></div>
-    <?php
+    
+  </footer>
+  <?php
     echo "<h4>POST</h4>";
     preShow($_POST);
     echo "<h4>GET</h4>";
@@ -720,8 +725,6 @@
     <h4>POST code</h4>
     <?php printMyCode();
     ?>
-  </footer>
-
 </body>
 
 </html>
